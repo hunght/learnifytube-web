@@ -141,7 +141,7 @@ export function PlatformDownloads() {
           View all releases on GitHub
         </a>
         <a
-          href="https://github.com/itracksy/itracksy"
+          href="https://github.com/hunght/LearnifyTube"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center text-sm text-primary hover:underline"

@@ -3,19 +3,19 @@ import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'iTracksy Pricing - Choose Your Plan',
+  title: 'LearnifyTube Pricing - Choose Your Plan',
   description:
-    'Explore iTracksy pricing options and choose the plan that best fits your needs.',
+    'Explore LearnifyTube pricing options and choose the plan that best fits your needs.',
   openGraph: {
-    title: 'iTracksy Pricing - Choose Your Plan',
+    title: 'LearnifyTube Pricing - Choose Your Plan',
     description:
-      'Explore iTracksy pricing options and choose the plan that best fits your needs.',
-    url: 'https://www.itracksy.com/pricing',
+      'Explore LearnifyTube pricing options and choose the plan that best fits your needs.',
+    url: 'https://learnifytube.com/pricing',
   },
   twitter: {
-    title: 'iTracksy Pricing - Choose Your Plan',
+    title: 'LearnifyTube Pricing - Choose Your Plan',
     description:
-      'Explore iTracksy pricing options and choose the plan that best fits your needs.',
+      'Explore LearnifyTube pricing options and choose the plan that best fits your needs.',
   },
 };
 
@@ -29,8 +29,8 @@ const PricingPage: React.FC = () => {
         Just kidding, it&apos;s totally free!
       </p>
       <p className="text-center text-xl font-semibold">
-        We believe in spreading joy, not emptying wallets. Enjoy iTracksy
-        without spending a single beep... err, penny!
+        We believe in spreading knowledge, not emptying wallets. Enjoy LearnifyTube
+        without spending a single penny!
       </p>
     </div>
   );

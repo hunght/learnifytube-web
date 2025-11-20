@@ -10,7 +10,7 @@ function getAdminEmails(): string[] {
 
   // Default admin emails - you should set ADMIN_EMAILS environment variable in production
   return [
-    'admin@itracksy.com',
+    'admin@learnifytube.com',
     'hth321@gmail.com',
     // Add more admin emails here
   ];

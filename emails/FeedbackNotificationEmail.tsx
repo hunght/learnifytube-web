@@ -29,10 +29,10 @@ export const FeedbackNotificationEmail: React.FC<
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={'https://www.itracksy.com/logo-300.png'}
+          src={'https://learnifytube.com/logo.png'}
           width={100}
           height={100}
-          alt="iTracksy Logo"
+          alt="LearnifyTube Logo"
           style={logo}
         />
         <Heading style={h1}>Thank You for Your Feedback</Heading>
@@ -42,7 +42,7 @@ export const FeedbackNotificationEmail: React.FC<
           want to thank you for taking the time to share your thoughts with us.
         </Text>
         <Text style={text}>
-          Your input is valuable and helps us improve iTracksy for everyone. Our
+          Your input is valuable and helps us improve LearnifyTube for everyone. Our
           team will review your feedback carefully.
         </Text>
         <Section style={summarySection}>
@@ -64,7 +64,7 @@ export const FeedbackNotificationEmail: React.FC<
         >
           Join Our Discord
         </Button>
-        <Text style={footer}>The iTracksy Team</Text>
+        <Text style={footer}>The LearnifyTube Team</Text>
       </Container>
     </Body>
   </Html>

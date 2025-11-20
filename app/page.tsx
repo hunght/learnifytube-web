@@ -27,45 +27,45 @@ import { GitHubButton } from '@/components/github-button';
 import { EmailSubscriptionForm } from '@/components/email-subscription-form';
 
 const description =
-  'iTracksy: Open-source time tracking application for personal and team productivity. Track your time, analyze performance, and boost productivity with our free, privacy-focused desktop app for Windows, macOS, and Linux.';
+  'LearnifyTube: Open-source YouTube downloader for learning. Download videos, playlists, and channels with our free, privacy-focused desktop app for Windows, macOS, and Linux.';
 
 export const metadata: Metadata = {
-  title: 'iTracksy: Free Open-Source Time Tracking Application for Individuals',
+  title: 'LearnifyTube: Free Open-Source YouTube Downloader for Learners',
   description: description,
   keywords:
-    'time tracking, productivity, open-source, desktop app, team productivity, time management, project tracking, work hours, time analytics, free time tracker',
+    'youtube downloader, video downloader, open-source, desktop app, learning, education, offline viewing, free youtube downloader',
   viewport: 'width=device-width, initial-scale=1',
   openGraph: {
-    title: 'iTracksy - Free Open-Source Time Tracking Application',
+    title: 'LearnifyTube - Free Open-Source YouTube Downloader',
     description: description,
     type: 'website',
-    url: 'https://www.itracksy.com',
+    url: 'https://learnifytube.com',
     images: [
       {
-        url: 'https://www.itracksy.com/logo-300.png',
+        url: 'https://learnifytube.com/logo-300.png',
         width: 300,
         height: 300,
-        alt: 'iTracksy Logo',
+        alt: 'LearnifyTube Logo',
       },
     ],
-    siteName: 'iTracksy',
+    siteName: 'LearnifyTube',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iTracksy - Free Open-Source Time Tracking Application',
+    title: 'LearnifyTube - Free Open-Source YouTube Downloader',
     description: description,
     images: [
       {
-        url: 'https://www.itracksy.com/logo-300.png',
-        alt: 'iTracksy Logo',
+        url: 'https://learnifytube.com/logo-300.png',
+        alt: 'LearnifyTube Logo',
       },
     ],
     creator: '@buddy_beep_com',
     site: '@buddy_beep_com',
   },
   alternates: {
-    canonical: 'https://www.itracksy.com',
+    canonical: 'https://learnifytube.com',
   },
   robots: {
     index: true,
@@ -92,13 +92,13 @@ export default function Home() {
         item={{
           '@context': 'https://schema.org',
           '@type': 'VideoObject',
-          name: 'iTracksy Demo Video',
+          name: 'LearnifyTube Demo Video',
           description:
-            'Watch how iTracksy helps you track your time and boost productivity',
-          thumbnailUrl: 'https://www.itracksy.com/video-thumbnail.jpg',
+            'Watch how LearnifyTube helps you download videos for offline learning',
+          thumbnailUrl: 'https://learnifytube.com/video-thumbnail.jpg',
           uploadDate: '2023-04-15T08:00:00+08:00',
           duration: 'PT1M20S',
-          contentUrl: 'https://www.itracksy.com/demo-video.mp4',
+          contentUrl: 'https://learnifytube.com/demo-video.mp4',
           embedUrl: 'https://www.youtube.com/embed/your-video-id',
         }}
       />
@@ -106,8 +106,8 @@ export default function Home() {
         item={{
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'iTracksy',
-          url: 'https://www.itracksy.com',
+          name: 'LearnifyTube',
+          url: 'https://learnifytube.com',
 
           description: description,
           inLanguage: 'en-US',
@@ -122,8 +122,8 @@ export default function Home() {
         item={{
           '@context': 'https://schema.org',
           '@type': 'SoftwareApplication',
-          name: 'iTracksy',
-          applicationCategory: 'BusinessApplication',
+          name: 'LearnifyTube',
+          applicationCategory: 'MultimediaApplication',
           operatingSystem: 'Windows, macOS, Linux',
           offers: {
             '@type': 'Offer',
@@ -135,7 +135,7 @@ export default function Home() {
             ratingValue: '4.8',
             ratingCount: '25',
           },
-          downloadUrl: 'https://www.itracksy.com/download',
+          downloadUrl: 'https://learnifytube.com/download',
         }}
       />
       <div className="min-h-dvh relative flex flex-col bg-background">
@@ -156,19 +156,19 @@ export default function Home() {
                     <span className="text-slate-700 dark:text-slate-200">
                       The{' '}
                     </span>
-                    <span className="text-amber-500">Only Time Tracker</span>
+                    <span className="text-amber-500">Smartest Way</span>
                     <br />
                     <span className="text-slate-700 dark:text-slate-200">
-                      You Need
+                      To Learn Offline
                     </span>
                   </h1>
                   <p
                     className="mb-8 text-lg text-muted-foreground"
                     itemProp="description"
                   >
-                    Level up your personal or team&apos;s productivity with
-                    detailed time tracking. Insights and info on your
-                    performance. No credit card required!
+                    Level up your learning with the smartest YouTube downloader.
+                    Download videos, playlists, and channels for offline viewing.
+                    No ads, no tracking, just learning.
                   </p>
                   <div className="mb-8">
                     <DownloadButton />
@@ -232,19 +232,19 @@ export default function Home() {
               <div className="mb-12 text-center">
                 <h2 className="text-4xl font-bold">
                   <span className="text-amber-500">
-                    Everything You Need to Boost Productivity
+                    Everything You Need for Offline Learning
                   </span>
                 </h2>
               </div>
 
-              {/* Activity Tracking Feature */}
+              {/* Smart Downloads Feature */}
               <div className="mb-24 flex flex-col items-center md:flex-row md:items-start md:justify-between">
                 <div className="mb-8 flex flex-col space-y-4 md:mb-0 md:w-2/5">
-                  <h3 className="text-2xl font-bold">Activity Tracking</h3>
+                  <h3 className="text-2xl font-bold">Smart Downloads</h3>
                   <p className="text-slate-300">
-                    Track your work sessions effortlessly. iTracksy
-                    automatically captures your activities, helping you
-                    understand where your time goes without manual input.
+                    Download entire playlists and channels with a single click.
+                    LearnifyTube organizes your content intelligently for the
+                    best offline learning experience.
                   </p>
                   <ul className="space-y-2 text-slate-300">
                     <li className="flex items-start">
@@ -262,7 +262,7 @@ export default function Home() {
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Automatic activity detection</span>
+                      <span>Playlist & Channel downloads</span>
                     </li>
                     <li className="flex items-start">
                       <svg
@@ -279,7 +279,7 @@ export default function Home() {
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Focus session tracking</span>
+                      <span>Auto-generated subtitles</span>
                     </li>
                     <li className="flex items-start">
                       <svg
@@ -296,7 +296,7 @@ export default function Home() {
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Seamless background operation</span>
+                      <span>High-quality video & audio</span>
                     </li>
                   </ul>
                 </div>
@@ -304,7 +304,7 @@ export default function Home() {
                   <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
                     <Image
                       src="/screenshots/activity-tracking.png"
-                      alt="Activity tracking interface in iTracksy"
+                      alt="Smart downloads interface in LearnifyTube"
                       width={800}
                       height={500}
                       className="w-full"
@@ -314,13 +314,13 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Project Management Feature */}
+              {/* Learning Focused Feature */}
               <div className="mb-24 flex flex-col-reverse items-center md:flex-row md:items-start md:justify-between">
                 <div className="md:w-3/5 lg:w-1/2">
                   <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
                     <Image
                       src="/screenshots/project-management.png"
-                      alt="Project management kanban board in iTracksy"
+                      alt="Learning focused interface in LearnifyTube"
                       width={800}
                       height={500}
                       className="w-full"
@@ -329,11 +329,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mb-8 flex flex-col space-y-4 md:mb-0 md:w-2/5">
-                  <h3 className="text-2xl font-bold">Project Management</h3>
+                  <h3 className="text-2xl font-bold">Learning Focused</h3>
                   <p className="text-slate-300">
-                    Organize tasks with an intuitive kanban board. Drag and drop
-                    cards between columns to update status and keep your
-                    projects moving forward.
+                    Designed for learners, not just downloaders. Organize your
+                    videos by topic, track your progress, and take notes directly
+                    within the app.
                   </p>
                   <ul className="space-y-2 text-slate-300">
                     <li className="flex items-start">
@@ -351,7 +351,7 @@ export default function Home() {
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Intuitive drag-and-drop interface</span>
+                      <span>Distraction-free player</span>
                     </li>
                     <li className="flex items-start">
                       <svg
@@ -368,144 +368,7 @@ export default function Home() {
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Custom workflow columns</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Time tracking integration</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Time Analytics Feature */}
-              <div className="mb-24 flex flex-col items-center md:flex-row md:items-start md:justify-between">
-                <div className="mb-8 flex flex-col space-y-4 md:mb-0 md:w-2/5">
-                  <h3 className="text-2xl font-bold">Time Analytics</h3>
-                  <p className="text-slate-300">
-                    Gain insights from powerful analytics. Visualize how you
-                    spend your time with beautiful, interactive charts that
-                    reveal productivity patterns.
-                  </p>
-                  <ul className="space-y-2 text-slate-300">
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Interactive data visualization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Productivity trend analysis</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Customizable reporting periods</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="md:w-3/5 lg:w-1/2">
-                  <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
-                    <Image
-                      src="/screenshots/time-analytics.png"
-                      alt="Time analytics dashboard in iTracksy"
-                      width={800}
-                      height={500}
-                      className="w-full"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Achievements Feature */}
-              <div className="mb-24 flex flex-col-reverse items-center md:flex-row md:items-start md:justify-between">
-                <div className="md:w-3/5 lg:w-1/2">
-                  <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
-                    <Image
-                      src="/screenshots/achievements.png"
-                      alt="Achievement system in iTracksy"
-                      width={800}
-                      height={500}
-                      className="w-full"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <div className="mb-8 flex flex-col space-y-4 md:mb-0 md:w-2/5">
-                  <h3 className="text-2xl font-bold">Achievements</h3>
-                  <p className="text-slate-300">
-                    Stay motivated with gamification. Unlock achievements as you
-                    reach productivity milestones, making productivity
-                    improvement fun and rewarding.
-                  </p>
-                  <ul className="space-y-2 text-slate-300">
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Productivity milestone badges</span>
+                      <span>Note-taking integration</span>
                     </li>
                     <li className="flex items-start">
                       <svg
@@ -524,103 +387,7 @@ export default function Home() {
                       </svg>
                       <span>Progress tracking</span>
                     </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Motivational reward system</span>
-                    </li>
                   </ul>
-                </div>
-              </div>
-
-              {/* Rule-Based Classification Feature */}
-              <div className="flex flex-col items-center md:flex-row md:items-start md:justify-between">
-                <div className="mb-8 flex flex-col space-y-4 md:mb-0 md:w-2/5">
-                  <h3 className="text-2xl font-bold">
-                    Rule-Based Classification
-                  </h3>
-                  <p className="text-slate-300">
-                    Customize how activities are categorized. Create rules to
-                    automatically classify your work based on application names,
-                    websites, or custom patterns.
-                  </p>
-                  <ul className="space-y-2 text-slate-300">
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Custom categorization rules</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Pattern matching for applications</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Website-based activity grouping</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="md:w-3/5 lg:w-1/2">
-                  <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
-                    <Image
-                      src="/screenshots/rule-classification.png"
-                      alt="Rule-based classification interface in iTracksy"
-                      width={800}
-                      height={500}
-                      className="w-full"
-                      loading="lazy"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -636,7 +403,7 @@ export default function Home() {
                   Open Source & Community-Driven
                 </h2>
                 <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                  iTracksy is proudly open source. We believe in transparency,
+                  LearnifyTube is proudly open source. We believe in transparency,
                   collaboration, and community-driven development.
                 </p>
               </div>
@@ -663,13 +430,13 @@ export default function Home() {
                   <CardHeader className="p-0">
                     <CardTitle className="mb-2 text-xl">Contribute</CardTitle>
                     <CardDescription>
-                      Help us improve iTracksy by contributing code, reporting
+                      Help us improve LearnifyTube by contributing code, reporting
                       bugs, or suggesting new features.
                     </CardDescription>
                   </CardHeader>
                   <div className="mt-auto pt-4">
                     <a
-                      href="https://github.com/itracksy/itracksy"
+                      href="https://github.com/hunght/LearnifyTube"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm font-medium text-primary hover:underline"
@@ -720,13 +487,13 @@ export default function Home() {
                       Documentation
                     </CardTitle>
                     <CardDescription>
-                      Explore our documentation to learn about iTracksy&apos;s
+                      Explore our documentation to learn about LearnifyTube&apos;s
                       features, architecture, and development process.
                     </CardDescription>
                   </CardHeader>
                   <div className="mt-auto pt-4">
                     <a
-                      href="https://github.com/itracksy/itracksy#readme"
+                      href="https://github.com/hunght/LearnifyTube#readme"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm font-medium text-primary hover:underline"

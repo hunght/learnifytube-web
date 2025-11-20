@@ -21,55 +21,55 @@ interface BetaInviteEmailProps {
 export const BetaInviteBuddybeepEmail: React.FC<BetaInviteEmailProps> = ({
   name = 'there',
 }) => {
-  const downloadUrl = 'https://www.itracksy.com/download';
-  const feedbackUrl = 'https://www.itracksy.com/feedback';
+  const downloadUrl = 'https://learnifytube.com/download';
+  const feedbackUrl = 'https://learnifytube.com/feedback';
   const discordUrl = siteConfig.links.discord;
 
   return (
     <Html>
       <Head />
       <Preview>
-        From Buddybeep to iTracksy: Your invite to our new advanced productivity
+        From iTracksy to LearnifyTube: Your invite to our new advanced learning
         app!
       </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={'https://www.itracksy.com/icon-300.png'}
+            src={'https://learnifytube.com/icon-300.png'}
             width={100}
             height={100}
-            alt="iTracksy Logo"
+            alt="LearnifyTube Logo"
             style={logo}
           />
-          <Heading style={h1}>Welcome to iTracksy!</Heading>
+          <Heading style={h1}>Welcome to LearnifyTube!</Heading>
           <Text style={text}>Hello {name},</Text>
           <Text style={text}>
-            {`As a valued Buddybeep user, we're excited to invite you to iTracksy
-            - our new and improved time management and productivity platform
-            that builds on everything you loved about Buddybeep while adding
+            {`As a valued iTracksy user, we're excited to invite you to LearnifyTube
+            - our new and improved learning platform
+            that builds on everything you loved about iTracksy while adding
             powerful new features!`}
           </Text>
 
           <Text style={text}>
-            {`iTracksy represents the next evolution of our productivity tools,
+            {`LearnifyTube represents the next evolution of our learning tools,
             designed with feedback from users like you. We've enhanced the core
-            time-tracking capabilities while adding robust project management,
+            download capabilities while adding robust organization,
             improved analytics, and a more intuitive interface.`}
           </Text>
 
           <Button style={btn} href={downloadUrl}>
-            Download iTracksy Now
+            Download LearnifyTube Now
           </Button>
 
           <Text style={text}>
-            <strong>{`What's new in iTracksy:`}</strong>
+            <strong>{`What's new in LearnifyTube:`}</strong>
           </Text>
           <ul style={listStyle}>
             <li style={listItem}>
-              Enhanced time tracking with automated suggestions
+              Enhanced video downloading with automated quality selection
             </li>
             <li style={listItem}>
-              Advanced project organization and task management
+              Advanced playlist organization and learning management
             </li>
             <li style={listItem}>
               Improved reporting and productivity insights
@@ -79,8 +79,8 @@ export const BetaInviteBuddybeepEmail: React.FC<BetaInviteEmailProps> = ({
           </ul>
 
           <Text style={text}>
-            {`As we focus our development efforts on iTracksy, we'll be gradually
-            phasing out support for Buddybeep. We've made the transition process
+            {`As we focus our development efforts on LearnifyTube, we'll be gradually
+            phasing out support for iTracksy. We've made the transition process
             simple, and your feedback during this beta period is invaluable to
             us.`}
           </Text>
@@ -97,7 +97,7 @@ export const BetaInviteBuddybeepEmail: React.FC<BetaInviteEmailProps> = ({
           <Hr style={divider} />
 
           <Text style={text}>
-            {`Thank you for being part of our journey from Buddybeep to iTracksy.
+            {`Thank you for being part of our journey from iTracksy to LearnifyTube.
             We've built this new platform with users like you in mind, and we
             can't wait to hear what you think!`}
           </Text>
@@ -105,7 +105,7 @@ export const BetaInviteBuddybeepEmail: React.FC<BetaInviteEmailProps> = ({
           <Text style={text}>
             All the best,
             <br />
-            The iTracksy Team
+            The LearnifyTube Team
           </Text>
         </Container>
       </Body>

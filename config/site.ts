@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: 'iTracksy',
-  url: 'https://www.itracksy.com',
+  name: 'LearnifyTube',
+  url: 'https://learnifytube.com',
   description:
-    'iTracksy is a powerful desktop application for tracking your activities and managing projects efficiently',
-  author: 'Admin',
+    'The smartest learning-first YouTube downloader',
+  author: 'Hung Hoang',
   links: {
     twitter: 'https://twitter.com/buddy_beep_com',
-    github: 'https://github.com/itracksy/itracksy',
+    github: 'https://github.com/hunght/learnifytube-web',
     discord: 'https://discord.gg/BzQZpdZuM7',
   },
 };

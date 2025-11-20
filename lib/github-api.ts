@@ -2,7 +2,7 @@
  * GitHub API client for fetching release information
  */
 
-const GITHUB_REPO = 'itracksy/itracksy';
+const GITHUB_REPO = 'hunght/LearnifyTube';
 const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
 
 interface GitHubRelease {

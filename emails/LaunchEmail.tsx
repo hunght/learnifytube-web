@@ -23,21 +23,21 @@ interface LaunchEmailProps {
 export const LaunchEmail: React.FC<LaunchEmailProps> = ({
   name = 'there',
   launchPlatform = 'Product Hunt',
-  launchUrl = 'https://www.producthunt.com/posts/itracksy',
+  launchUrl = 'https://www.producthunt.com/posts/learnifytube',
 }) => {
   const discordUrl = siteConfig.links.discord;
 
   return (
     <Html>
       <Head />
-      <Preview>Lend us a hand in spreading iTracksy further!</Preview>
+      <Preview>Lend us a hand in spreading LearnifyTube further!</Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={'https://www.itracksy.com/icon-300.png'}
+            src={'https://learnifytube.com/icon-300.png'}
             width={100}
             height={100}
-            alt="iTracksy Logo"
+            alt="LearnifyTube Logo"
             style={logo}
           />
           <Heading style={h1}>
@@ -45,10 +45,10 @@ export const LaunchEmail: React.FC<LaunchEmailProps> = ({
           </Heading>
           <Text style={text}>Hi {name},</Text>
           <Text style={text}>
-            We hope that you have had great time using iTracksy. Today, we are
+            We hope that you have had great time using LearnifyTube. Today, we are
             officially launching on {launchPlatform} and your upvotes will fuel
             us a lot in the development process. Your support will also help us
-            spread iTracksy to more people, thus making it better everyday.
+            spread LearnifyTube to more people, thus making it better everyday.
           </Text>
 
           <Text style={highlightText}>
@@ -61,7 +61,7 @@ export const LaunchEmail: React.FC<LaunchEmailProps> = ({
           </Button>
 
           <Text style={text}>
-            Thank you very much for your support. Let&apos;s take iTracksy to
+            Thank you very much for your support. Let&apos;s take LearnifyTube to
             the #1 together.
           </Text>
 
@@ -70,7 +70,7 @@ export const LaunchEmail: React.FC<LaunchEmailProps> = ({
           <Text style={text}>
             All the best,
             <br />
-            iTracksy Team
+            LearnifyTube Team
           </Text>
 
           <Section style={socialSection}>

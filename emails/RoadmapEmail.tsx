@@ -21,37 +21,37 @@ interface RoadmapEmailProps {
 export const RoadmapEmail: React.FC<RoadmapEmailProps> = ({
   recipientName = 'there',
 }) => {
-  const roadmapUrl = 'https://www.itracksy.com/roadmap';
-  const feedbackFormUrl = 'https://www.itracksy.com/roadmap-feedback';
+  const roadmapUrl = 'https://learnifytube.com/roadmap';
+  const feedbackFormUrl = 'https://learnifytube.com/roadmap-feedback';
   const discordUrl = siteConfig.links.discord;
 
   return (
     <Html>
       <Head />
       <Preview>
-        Check out iTracksy&apos;s development plan/roadmap with us!
+        Check out LearnifyTube&apos;s development plan/roadmap with us!
       </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={'https://www.itracksy.com/icon-300.png'}
+            src={'https://learnifytube.com/icon-300.png'}
             width={100}
             height={100}
-            alt="iTracksy Logo"
+            alt="LearnifyTube Logo"
             style={logo}
           />
-          <Heading style={h1}>iTracksy Development Roadmap</Heading>
+          <Heading style={h1}>LearnifyTube Development Roadmap</Heading>
           <Text style={text}>Hello {recipientName},</Text>
           <Text style={text}>
-            It is the iTracksy team here. We hope that you have had great time
-            using iTracksy and it does not cause any troubles. However, if there
+            It is the LearnifyTube team here. We hope that you have had great time
+            using LearnifyTube and it does not cause any troubles. However, if there
             is something irritating & needing improvements, please feel free to
             tell us either through our feedback form or in our Discord server 👋
           </Text>
 
           <Text style={text}>
             So, the main content of this message is to communicate with you
-            about iTracksy&apos;s development roadmap. You can see it right
+            about LearnifyTube&apos;s development roadmap. You can see it right
             below 👇
           </Text>
 
@@ -83,7 +83,7 @@ export const RoadmapEmail: React.FC<RoadmapEmailProps> = ({
           <Text style={text}>
             All the best,
             <br />
-            iTracksy Team
+            LearnifyTube Team
           </Text>
         </Container>
       </Body>

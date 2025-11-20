@@ -19,31 +19,31 @@ interface TipsEmailProps {
 }
 
 export const TipsEmail: React.FC<TipsEmailProps> = ({ name = 'there' }) => {
-  const feedbackFormUrl = 'https://www.itracksy.com/feedback';
+  const feedbackFormUrl = 'https://learnifytube.com/feedback';
   const discordUrl = siteConfig.links.discord;
-  const downloadAppUrl = 'https://www.itracksy.com/download';
+  const downloadAppUrl = 'https://learnifytube.com/download';
 
   return (
     <Html>
       <Head />
       <Preview>
-        How to maximize iTracksy&apos;s potential to turn up your productivity?
+        How to maximize LearnifyTube&apos;s potential to turn up your learning?
       </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={'https://www.itracksy.com/icon-300.png'}
+            src={'https://learnifytube.com/icon-300.png'}
             width={100}
             height={100}
-            alt="iTracksy Logo"
+            alt="LearnifyTube Logo"
             style={logo}
           />
-          <Heading style={h1}>Maximize Your Productivity with iTracksy</Heading>
+          <Heading style={h1}>Maximize Your Learning with LearnifyTube</Heading>
           <Text style={text}>Hi {name},</Text>
           <Text style={text}>
-            It has been more than a week since iTracksy&apos;s release and we
-            appreciate your support. We really wish that iTracksy has been able
-            to help you in work, learning and daily activities. Still, here we
+            It has been more than a week since LearnifyTube&apos;s release and we
+            appreciate your support. We really wish that LearnifyTube has been able
+            to help you in learning and daily activities. Still, here we
             are to show you around and give you some tips to get the best out of
             the tool 💪
           </Text>
@@ -51,8 +51,8 @@ export const TipsEmail: React.FC<TipsEmailProps> = ({ name = 'there' }) => {
           <div style={tipContainer}>
             <Text style={tipTitle}>Tip #1:</Text>
             <Text style={tipText}>
-              Always remember to track the time in the start (we are releasing
-              an automated time tracking soon in the future 😉)
+              Always remember to organize your downloads (we are releasing
+              automated playlist management soon in the future 😉)
             </Text>
           </div>
 
@@ -67,7 +67,7 @@ export const TipsEmail: React.FC<TipsEmailProps> = ({ name = 'there' }) => {
           <div style={tipContainer}>
             <Text style={tipTitle}>Tip #3:</Text>
             <Text style={tipText}>
-              Arrange your projects/tasks based on preferences to keep track of
+              Arrange your playlists/videos based on preferences to keep track of
               everything
             </Text>
           </div>
@@ -75,8 +75,8 @@ export const TipsEmail: React.FC<TipsEmailProps> = ({ name = 'there' }) => {
           <div style={tipContainer}>
             <Text style={tipTitle}>Tip #4:</Text>
             <Text style={tipText}>
-              Apply time management strategies like Pomodoro, timeboxing,
-              Eisenhower matrix, etc. (presets of them will be added in the
+              Apply learning strategies like Spaced Repetition, Active Recall,
+              etc. (presets of them will be added in the
               future)
             </Text>
           </div>
@@ -84,7 +84,7 @@ export const TipsEmail: React.FC<TipsEmailProps> = ({ name = 'there' }) => {
           <div style={tipContainer}>
             <Text style={tipTitle}>Tip #5:</Text>
             <Text style={tipText}>
-              Adjust iTracksy&apos;s notifications to keep your focus at 100%
+              Adjust LearnifyTube&apos;s settings to keep your focus at 100%
               and remove distractions (the system will be updated constantly to
               be smarter and have more settings)
             </Text>
@@ -92,13 +92,13 @@ export const TipsEmail: React.FC<TipsEmailProps> = ({ name = 'there' }) => {
 
           <Text style={text}>
             Well, that pretty much wraps up this email. To ensure your
-            experience, the team will work hard to make iTracksy better and
+            experience, the team will work hard to make LearnifyTube better and
             better. And yes, we are really happy to have your feedbacks or
             participation in the development 💌
           </Text>
 
           <Button style={btn} href={downloadAppUrl}>
-            Download iTracksy App
+            Download LearnifyTube App
           </Button>
 
           <Section style={buttonContainer}>
@@ -119,7 +119,7 @@ export const TipsEmail: React.FC<TipsEmailProps> = ({ name = 'there' }) => {
           <Text style={text}>
             All the best,
             <br />
-            iTracksy Team
+            LearnifyTube Team
           </Text>
         </Container>
       </Body>

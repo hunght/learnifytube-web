@@ -14,19 +14,19 @@ import * as React from 'react';
 export const FeedbackEmail: React.FC = () => (
   <Html>
     <Head />
-    <Preview>iTracksy Needs Your Feedback To Serve You Better</Preview>
+    <Preview>LearnifyTube Needs Your Feedback To Serve You Better</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={'https://www.itracksy.com/logo-300.png'}
+          src={'https://learnifytube.com/logo.png'}
           width={100}
           height={100}
-          alt="iTracksy Logo"
+          alt="LearnifyTube Logo"
           style={logo}
         />
-        <Heading style={h1}>Hi there, awesome iTracksy users!</Heading>
+        <Heading style={h1}>Hi there, awesome LearnifyTube users!</Heading>
         <Text style={text}>
-          We hope iTracksy is serving you well. But, we don&apos;t want to stop
+          We hope LearnifyTube is serving you well. But, we don&apos;t want to stop
           there as our aim is to make the product better and greater for you.
           So, we would love to hear from you guys!
         </Text>
@@ -35,7 +35,7 @@ export const FeedbackEmail: React.FC = () => (
           even more delicious. 🍔 Now let&apos;s get into it and help us level
           up 👇
         </Text>
-        <Button style={btn} href="https://www.itracksy.com/feedback">
+        <Button style={btn} href="https://learnifytube.com/feedback">
           Help us improve here!
         </Button>
         <Text style={text}>
@@ -44,7 +44,7 @@ export const FeedbackEmail: React.FC = () => (
           with us!
         </Text>
         <Text style={text}>
-          Remember, your words have the power to shape the future of iTracksy.
+          Remember, your words have the power to shape the future of LearnifyTube.
           So, let&apos;s make this feedback dance epic! 💃
         </Text>
         <Text style={text}>
@@ -54,7 +54,7 @@ export const FeedbackEmail: React.FC = () => (
         <Text style={text}>
           Regards,
           <br />
-          iTracksy
+          LearnifyTube
         </Text>
       </Container>
     </Body>

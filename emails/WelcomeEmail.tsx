@@ -18,39 +18,39 @@ interface WelcomeEmailProps {
 export const WelcomeEmail: React.FC<WelcomeEmailProps> = ({ name }) => (
   <Html>
     <Head />
-    <Preview>Welcome to iTracksy!</Preview>
+    <Preview>Welcome to LearnifyTube!</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={'https://www.itracksy.com/logo-300.png'}
+          src={'https://learnifytube.com/logo.png'}
           width={100}
           height={100}
-          alt="iTracksy Logo"
+          alt="LearnifyTube Logo"
           style={logo}
         />
-        <Heading style={h1}>Welcome to iTracksy!</Heading>
+        <Heading style={h1}>Welcome to LearnifyTube!</Heading>
         <Text style={text}>Hello {name},</Text>
         <Text style={text}>
-          {`We're excited to have you on board. iTracksy is here to help you
-          connect and collaborate.`}
+          {`We're excited to have you on board. LearnifyTube is here to help you
+          download and learn from YouTube videos efficiently.`}
         </Text>
-        <Button style={btn} href="https://www.itracksy.com">
+        <Button style={btn} href="https://learnifytube.com">
           Start Your Journey Now
         </Button>
         <Text style={text}>
           If you have any questions, feel free to reach out to our support team.
         </Text>
         <Text style={text}>
-          Don&apos;t forget to download our extension to get the most out of
-          iTracksy!
+          Don&apos;t forget to download our app to get the most out of
+          LearnifyTube!
         </Text>
-        <Button style={secondaryBtn} href="https://www.itracksy.com/install">
-          Download Extension
+        <Button style={secondaryBtn} href="https://learnifytube.com/download">
+          Download App
         </Button>
         <Text style={text}>
           Best regards,
           <br />
-          The iTracksy Team
+          The LearnifyTube Team
         </Text>
       </Container>
     </Body>

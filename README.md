@@ -1,10 +1,10 @@
-# iTracksy Content
+# LearnifyTube Web
 
-This is the README file for the iTracksy Content project.
+This is the web repository for LearnifyTube.
 
 ## Introduction
 
-iTracksy Content is a template for creating a Next.js blog using the Velite theme. It provides a clean and minimalistic design, perfect for showcasing your content.
+LearnifyTube Web is the landing page and blog for LearnifyTube, the smartest learning-first YouTube downloader.
 
 ## Features
 
@@ -16,9 +16,9 @@ iTracksy Content is a template for creating a Next.js blog using the Velite them
 
 ## Getting Started
 
-To get started with iTracksy Content, follow these steps:
+To get started with LearnifyTube Web, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/itracksy-content.git`
+1. Clone the repository: `git clone https://github.com/hunght/learnifytube-web.git`
 2. Install the dependencies: `npm install`
 3. Start the development server: `npm run dev`
 4. Open your browser and navigate to `http://localhost:3000`
