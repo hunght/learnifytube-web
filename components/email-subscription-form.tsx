@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -23,39 +22,12 @@ export function EmailSubscriptionForm() {
     setIsSubmitting(true);
     setError('');
 
-    try {
-      // Create a Supabase client
-      const supabase = createClientComponentClient();
+    // Fake a network request so the UI still feels interactive
+    await new Promise((resolve) => setTimeout(resolve, 600));
 
-      // Save the email to the leads table
-      const { error: supabaseError } = await supabase.from('leads').insert({
-        name: email.split('@')[0], // Extract username part of email as name
-        email: email,
-        phone: 'Not provided', // Default value
-        message: 'Homepage subscription',
-        submission_time: new Date().toISOString(),
-        group: 'newsletter-subscribers', // Group for these specific leads
-      });
-
-      if (supabaseError) {
-        console.error('Error saving subscription:', supabaseError);
-        // If it's a duplicate email error, still show success to the user
-        if (supabaseError.code === '23505') {
-          // Unique constraint violation code
-          setIsSubscribed(true);
-        } else {
-          setError('Failed to subscribe. Please try again later.');
-        }
-      } else {
-        // Set state to show success message
-        setIsSubscribed(true);
-      }
-    } catch (error) {
-      console.error('Subscription error:', error);
-      setError('Failed to subscribe. Please try again later.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    setIsSubscribed(true);
+    setEmail('');
+    setIsSubmitting(false);
   };
 
   return (

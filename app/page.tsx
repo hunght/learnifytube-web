@@ -576,7 +576,7 @@ export default function Home() {
               <div className="mt-12 text-center">
                 <div className="mb-4 inline-flex items-center justify-center space-x-2">
                   <GitHubButton
-                    href="https://github.com/itracksy/itracksy/stargazers"
+                    href="https://github.com/hunght/LearnifyTube/stargazers"
                     type="star"
                     className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700"
                   >
@@ -584,7 +584,7 @@ export default function Home() {
                   </GitHubButton>
 
                   <GitHubButton
-                    href="https://github.com/itracksy/itracksy/fork"
+                    href="https://github.com/hunght/LearnifyTube/fork"
                     type="fork"
                     className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700"
                   >
@@ -592,7 +592,7 @@ export default function Home() {
                   </GitHubButton>
 
                   <GitHubButton
-                    href="https://github.com/itracksy/itracksy/issues"
+                    href="https://github.com/hunght/LearnifyTube/issues"
                     type="issue"
                     className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700"
                   >
@@ -601,9 +601,9 @@ export default function Home() {
                 </div>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  iTracksy is licensed under the{' '}
+                  LearnifyTube is licensed under the{' '}
                   <a
-                    href="https://github.com/itracksy/itracksy/blob/main/LICENSE"
+                    href="https://github.com/hunght/LearnifyTube/blob/main/LICENSE"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:underline"
@@ -645,14 +645,14 @@ export default function Home() {
           >
             <div className="container mx-auto px-4 text-center">
               <h2 className="mb-6 text-3xl font-bold" id="cta-heading">
-                Ready to Boost Your Productivity?
+                Ready to Boost Your Learning?
               </h2>
               <p className="mb-8 text-lg">
-                Join the growing community of users who are tracking their time
-                more effectively with iTracksy.
+                Join the growing community of learners who are mastering new skills
+                more effectively with LearnifyTube.
               </p>
               <DownloadNowButton size="lg">
-                Download iTracksy Now
+                Download LearnifyTube Now
               </DownloadNowButton>
 
               {/* Email Subscription Component */}

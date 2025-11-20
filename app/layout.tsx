@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 
 import { Providers } from '@/components/providers';
 import { siteConfig } from '@/config/site';
-import { ReactQueryClientProvider } from '@/components/ReactQueryClientProvider';
 
 import { Toaster } from '@/components/ui/toaster';
 import { PostHogProvider } from './posthogProvider';
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/icon-300.png',
+    apple: '/apple-touch-icon.png',
   },
   viewport:
     'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
@@ -39,21 +38,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ReactQueryClientProvider>
-      <html lang="en" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
-        <body
-          className={cn(
-            'min-h-screen bg-background font-sans antialiased',
-            inter.variable,
-          )}
-        >
-          <PostHogProvider>
-            <Providers>{children}</Providers>
+    <html lang="en" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          inter.variable,
+        )}
+      >
+        <PostHogProvider>
+          <Providers>{children}</Providers>
 
-            <Toaster />
-          </PostHogProvider>
-        </body>
-      </html>
-    </ReactQueryClientProvider>
+          <Toaster />
+        </PostHogProvider>
+      </body>
+    </html>
   );
 }

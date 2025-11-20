@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { siteConfig } from '@/config/site'; // Import siteConfig
 
 import { Button } from '@/components/ui/button';
@@ -25,71 +24,41 @@ import {
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
 
-// Add this new type for our feedback data
-type Feedback = {
-  id: string;
-  created_at: string;
-  name: string;
-  email: string;
-  feedback_type: string;
-  message: string;
-};
-
 export default function FeedbackPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [feedbackType, setFeedbackType] = useState('');
   const [message, setMessage] = useState('');
-
-  // Mutation for submitting feedback using the API endpoint
-  const { mutate: submitFeedback, isPending: isSubmitting } = useMutation({
-    mutationFn: async (newFeedback: Omit<Feedback, 'id' | 'created_at'>) => {
-      const response = await fetch('/api/feedback', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newFeedback),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to submit feedback');
-      }
-
-      return response.json();
-    },
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    submitFeedback(
-      { name, email, feedback_type: feedbackType, message },
-      {
-        onSuccess: () => {
-          // Reset form
-          setName('');
-          setEmail('');
-          setFeedbackType('');
-          setMessage('');
-          // No need to invalidate queries since we're not displaying feedback
-          toast({
-            title: 'Feedback Submitted',
-            description: 'Thank you for your feedback!',
-          });
-        },
-        onError: (error) => {
-          console.error('Error submitting feedback:', error);
-          toast({
-            title: 'Submission Error',
-            description:
-              'There was an error submitting your feedback. Please try again.',
-            variant: 'destructive',
-          });
-        },
-      },
-    );
+    try {
+      setIsSubmitting(true);
+      // Simulate an async submission so the UI still feels responsive
+      await new Promise((resolve) => setTimeout(resolve, 800));
+
+      setName('');
+      setEmail('');
+      setFeedbackType('');
+      setMessage('');
+
+      toast({
+        title: 'Feedback Submitted',
+        description: 'Thank you for your feedback!',
+      });
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      toast({
+        title: 'Submission Error',
+        description:
+          'There was an error submitting your feedback. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

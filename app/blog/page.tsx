@@ -7,19 +7,19 @@ import { getAllTags, sortPosts, sortTagsByCount } from '@/lib/utils';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'iTracksy Blog - AI Browsing Tips and Insights',
+  title: 'LearnifyTube Blog - Learning Tips and Insights',
   description:
-    'Stay updated with the latest AI browsing tips, tricks, and insights on the iTracksy blog.',
+    'Stay updated with the latest learning tips, tricks, and insights on the LearnifyTube blog.',
   openGraph: {
-    title: 'iTracksy Blog - AI Browsing Tips and Insights',
+    title: 'LearnifyTube Blog - Learning Tips and Insights',
     description:
-      'Stay updated with the latest AI browsing tips, tricks, and insights on the iTracksy blog.',
-    url: 'https://www.itracksy.com/blog',
+      'Stay updated with the latest learning tips, tricks, and insights on the LearnifyTube blog.',
+    url: 'https://learnifytube.com/blog',
   },
   twitter: {
-    title: 'iTracksy Blog - AI Browsing Tips and Insights',
+    title: 'LearnifyTube Blog - Learning Tips and Insights',
     description:
-      'Stay updated with the latest AI browsing tips, tricks, and insights on the iTracksy blog.',
+      'Stay updated with the latest learning tips, tricks, and insights on the LearnifyTube blog.',
   },
 };
 
@@ -50,10 +50,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <div className="flex-1 space-y-4">
           <h1 className="inline-block text-4xl font-black lg:text-5xl">Blog</h1>
           <p className="text-xl text-muted-foreground">
-            Welcome to BubbyBeep, your innovative AI sidekick designed to
-            enhance your browsing experience. Seamlessly integrated into your
-            Chrome browser, BubbyBeep brings advanced AI capabilities to your
-            fingertips.
+            Welcome to LearnifyTube, your smart companion designed to
+            enhance your offline learning experience. Seamlessly download and organize
+            educational content from YouTube.
           </p>
         </div>
       </div>

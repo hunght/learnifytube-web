@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   FaWindows,
@@ -14,7 +14,6 @@ import Link from 'next/link';
 import { getPlatformDownloadUrl } from '@/utils/handleDownload';
 import { useAppVersion } from '@/hooks/use-app-version';
 import Image from 'next/image';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 const DownloadPage = () => {
   const { links, loading, version } = useAppVersion();
@@ -26,6 +25,33 @@ const DownloadPage = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [subscribeError, setSubscribeError] = useState('');
+
+  const handlePlatformDownload = useCallback(
+    (platform: string, macArch?: string) => {
+      if (platform === 'windows') {
+        window.location.href = links.windows;
+      } else if (platform === 'mac') {
+        if (macArch === 'intel' && links.macosIntel) {
+          window.location.href = links.macosIntel;
+        } else {
+          window.location.href = links.macos;
+        }
+      } else if (platform === 'linux') {
+        window.location.href = links.linux;
+      } else {
+        window.location.href = links.releases;
+      }
+      setDownloadStarted(true);
+    },
+    [links],
+  );
+
+  const initiateDownload = useCallback(() => {
+    if (downloadStarted) return;
+
+    setDownloadStarted(true);
+    handlePlatformDownload(os || 'unknown');
+  }, [downloadStarted, handlePlatformDownload, os]);
 
   useEffect(() => {
     // Detect user's operating system and if it's mobile
@@ -82,14 +108,7 @@ const DownloadPage = () => {
 
       return () => clearInterval(timer);
     }
-  }, [loading, links, os]);
-
-  const initiateDownload = () => {
-    if (downloadStarted) return;
-
-    setDownloadStarted(true);
-    handlePlatformDownload(os || 'unknown');
-  };
+  }, [loading, links, os, initiateDownload]);
 
   const getOsIcon = () => {
     switch (os) {
@@ -142,23 +161,6 @@ const DownloadPage = () => {
     }
   };
 
-  const handlePlatformDownload = (platform: string, macArch?: string) => {
-    if (platform === 'windows') {
-      window.location.href = links.windows;
-    } else if (platform === 'mac') {
-      // If macArch is specified, use the appropriate URL
-      if (macArch === 'intel' && links.macosIntel) {
-        window.location.href = links.macosIntel;
-      } else {
-        window.location.href = links.macos; // Default to ARM
-      }
-    } else if (platform === 'linux') {
-      window.location.href = links.linux;
-    } else {
-      window.location.href = links.releases;
-    }
-    setDownloadStarted(true);
-  };
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -169,39 +171,13 @@ const DownloadPage = () => {
       return;
     }
 
-    try {
-      // Create a Supabase client
-      const supabase = createClientComponentClient();
+    setSubscribeError('');
 
-      // Save the email to the leads table
-      const { error } = await supabase.from('leads').insert({
-        name: email.split('@')[0], // Extract username part of email as name
-        email: email,
-        phone: 'Not provided', // Default value
-        message: `Mobile app interest (${os} user)`,
-        submission_time: new Date().toISOString(),
-        group: 'mobile-subscribers', // Group for these specific leads
-      });
+    // Simulate a short network delay for better UX
+    await new Promise((resolve) => setTimeout(resolve, 600));
 
-      if (error) {
-        console.error('Error saving subscription:', error);
-        // If it's a duplicate email error, still show success to the user
-        if (error.code === '23505') {
-          // Unique constraint violation code
-          setSubscribed(true);
-          setSubscribeError('');
-        } else {
-          setSubscribeError('Failed to subscribe. Please try again later.');
-        }
-      } else {
-        // Set state to show success message
-        setSubscribed(true);
-        setSubscribeError('');
-      }
-    } catch (error) {
-      console.error('Subscription error:', error);
-      setSubscribeError('Failed to subscribe. Please try again later.');
-    }
+    setSubscribed(true);
+    setEmail('');
   };
 
   return (

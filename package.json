@@ -11,11 +11,7 @@
     "lint": "next lint",
     "shadcn": "pnpm dlx shadcn@latest add ",
     "clear": "rm -rf .next node_modules/.cache",
-    "supabase:types": "./set_supabase_token.sh",
-    "supabase:pull": "supabase db pull --linked",
-    "supabase:start": "supabase start",
-    "supabase:reset": "supabase db reset",
-    "supabase:sync": "npm run supabase:pull && npm run supabase:types"
+    "generate:icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
@@ -43,11 +39,6 @@
     "@radix-ui/react-toast": "^1.2.1",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-email/components": "0.0.22",
-    "@supabase/auth-helpers-nextjs": "^0.9.0",
-    "@supabase/auth-helpers-react": "^0.4.2",
-    "@supabase/ssr": "^0.1.0",
-    "@supabase/supabase-js": "^2.42.0",
-    "@tanstack/react-query": "^5.31.0",
     "@tanstack/react-table": "^8.21.2",
     "@tiptap/core": "2.3.1",
     "@types/file-saver": "^2.0.7",
@@ -100,7 +91,6 @@
     "remark-gfm": "^4.0.0",
     "remark-math": "^6.0.0",
     "remark-supersub": "^1.0.0",
-    "resend": "^3.5.0",
     "schema-dts": "^1.1.2",
     "sonner": "^2.0.1",
     "strip-markdown": "^6.0.0",
@@ -132,7 +122,8 @@
     "rehype-slug": "^6.0.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.6.3",
-    "velite": "0.1.0-beta.11"
+    "velite": "0.1.0-beta.11",
+    "sharp": "^0.33.5"
   },
   "packageManager": "pnpm@9.6.0"
 }

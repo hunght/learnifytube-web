@@ -46,7 +46,7 @@ export function SiteHeader({ isLoginPage = false }: SiteHeaderProps) {
 
           <DownloadNowButton />
 
-          <MobileNav isAuthenticated={false} />
+          <MobileNav />
         </div>
       </div>
     </header>
