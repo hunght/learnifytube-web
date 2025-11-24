@@ -1,6 +1,8 @@
 'use client';
+
+import { FaApple, FaLinux, FaWindows } from 'react-icons/fa';
+
 import { useAppVersion } from '@/hooks/use-app-version';
-import { FaWindows, FaApple, FaLinux } from 'react-icons/fa';
 
 export function PlatformDownloads() {
   const { links } = useAppVersion();
@@ -13,49 +15,43 @@ export function PlatformDownloads() {
           href={links.windows}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center space-x-1 rounded-md bg-blue-100 px-3 py-1 transition-colors hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800"
+          className="flex items-center space-x-1 rounded-md bg-primary/10 px-3 py-1 transition-colors hover:bg-primary/20"
           aria-label="Download for Windows"
         >
           <div className="flex h-8 w-8 items-center justify-center">
-            <FaWindows className="text-blue-600 dark:text-blue-300" />
+            <FaWindows className="text-primary" />
           </div>
-          <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
-            Windows
-          </span>
+          <span className="text-sm font-medium text-primary">Windows</span>
         </a>
 
         <a
           href={links.macos}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center space-x-1 rounded-md bg-gray-100 px-3 py-1 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+          className="flex items-center space-x-1 rounded-md bg-foreground/5 px-3 py-1 transition-colors hover:bg-foreground/10 dark:bg-background/60 dark:hover:bg-background/40"
           aria-label="Download for macOS"
         >
           <div className="flex h-8 w-8 items-center justify-center">
-            <FaApple className="text-gray-600 dark:text-gray-300" />
+            <FaApple className="text-foreground/80" />
           </div>
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            macOS
-          </span>
+          <span className="text-sm font-medium text-foreground">macOS</span>
         </a>
 
         <a
           href={links.linux}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center space-x-1 rounded-md bg-slate-100 px-3 py-1 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700"
+          className="flex items-center space-x-1 rounded-md bg-accent/10 px-3 py-1 transition-colors hover:bg-accent/20"
           aria-label="Download for Linux"
         >
           <div className="flex h-8 w-8 items-center justify-center">
-            <FaLinux className="text-slate-600 dark:text-slate-300" />
+            <FaLinux className="text-accent" />
           </div>
-          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-            Linux
-          </span>
+          <span className="text-sm font-medium text-accent">Linux</span>
         </a>
 
         <div
-          className="flex items-center space-x-1 rounded-md bg-green-50 px-3 py-1 dark:bg-green-900/30"
+          className="flex items-center space-x-1 rounded-md bg-success/10 px-3 py-1"
           aria-label="Coming soon for Android"
         >
           <div className="flex h-8 w-8 items-center justify-center">
@@ -69,24 +65,20 @@ export function PlatformDownloads() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-green-600 dark:text-green-400"
+              className="text-success"
             >
               <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
               <circle cx="12" cy="18" r="1" />
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-green-700 dark:text-green-400">
-              Android
-            </span>
-            <span className="text-xs text-green-600 dark:text-green-500">
-              Coming soon
-            </span>
+            <span className="text-sm font-medium text-success">Android</span>
+            <span className="text-xs text-success/80">Coming soon</span>
           </div>
         </div>
 
         <div
-          className="flex items-center space-x-1 rounded-md bg-indigo-50 px-3 py-1 dark:bg-indigo-900/30"
+          className="flex items-center space-x-1 rounded-md bg-primary/10 px-3 py-1"
           aria-label="Coming soon for iOS"
         >
           <div className="flex h-8 w-8 items-center justify-center">
@@ -100,19 +92,15 @@ export function PlatformDownloads() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-indigo-600 dark:text-indigo-400"
+              className="text-primary"
             >
               <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
               <path d="M12 18h.01" />
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-indigo-700 dark:text-indigo-400">
-              iOS
-            </span>
-            <span className="text-xs text-indigo-600 dark:text-indigo-500">
-              Coming soon
-            </span>
+            <span className="text-sm font-medium text-primary">iOS</span>
+            <span className="text-xs text-primary/80">Coming soon</span>
           </div>
         </div>
       </div>

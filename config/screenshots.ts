@@ -1,22 +1,18 @@
 export const appScreenshots = [
   {
-    src: '/screenshots/time-analytics.png',
-    alt: 'LearnifyTube Time Analytics Dashboard',
+    src: '/screenshots/dashboard.png',
+    alt: 'LearnifyTube Dashboard - Download Videos and Playlists',
   },
   {
-    src: '/screenshots/activity-tracking.png',
-    alt: 'LearnifyTube Activity Tracking Interface',
+    src: '/screenshots/channels.png',
+    alt: 'LearnifyTube Channels - Organize Your Content',
   },
   {
-    src: '/screenshots/project-management.png',
-    alt: 'LearnifyTube Project Management',
+    src: '/screenshots/player-playing.png',
+    alt: 'LearnifyTube Player - Distraction-Free Learning',
   },
   {
-    src: '/screenshots/achievements.png',
-    alt: 'LearnifyTube Achievement System',
-  },
-  {
-    src: '/screenshots/rule-classification.png',
-    alt: 'LearnifyTube Rule Classification System',
+    src: '/screenshots/settings.png',
+    alt: 'LearnifyTube Settings - Customize Your Experience',
   },
 ];

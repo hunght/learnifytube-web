@@ -15,14 +15,11 @@ export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
-  themeColor: '#000000',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
-  viewport:
-    'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
 };
 
 export const viewport: Viewport = {

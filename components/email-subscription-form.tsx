@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -13,7 +14,6 @@ export function EmailSubscriptionForm() {
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic email validation
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       setError('Please enter a valid email address');
       return;
@@ -22,7 +22,6 @@ export function EmailSubscriptionForm() {
     setIsSubmitting(true);
     setError('');
 
-    // Fake a network request so the UI still feels interactive
     await new Promise((resolve) => setTimeout(resolve, 600));
 
     setIsSubscribed(true);
@@ -33,7 +32,7 @@ export function EmailSubscriptionForm() {
   return (
     <div className="w-full">
       {isSubscribed ? (
-        <div className="rounded-md bg-green-50 p-4 text-green-800 dark:bg-green-950 dark:text-green-300">
+        <div className="rounded-md border border-success/20 bg-success/10 p-4 text-success dark:bg-success/20 dark:text-success">
           <p className="text-center font-medium">
             Thank you for subscribing! We&apos;ll keep you updated on the latest
             news and releases.
@@ -54,12 +53,12 @@ export function EmailSubscriptionForm() {
               disabled={isSubmitting}
               aria-label="Email address"
             />
-            {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
+            {error && <p className="mt-1 text-xs text-destructive">{error}</p>}
           </div>
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="bg-amber-500 hover:bg-amber-600"
+            className="bg-brand-gradient px-6 font-semibold text-white shadow-md shadow-primary/20 hover:opacity-95 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary"
           >
             {isSubmitting ? 'Subscribing...' : 'Subscribe'}
           </Button>

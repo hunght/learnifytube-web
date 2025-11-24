@@ -1,10 +1,9 @@
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { buttonVariants } from './ui/button';
+import Image from 'next/image';
+
+import { DownloadNowButton } from './download-now-button';
 import { MobileNav } from './mobile-nav';
 import { ModeToggle } from './mode-toggle';
-import Image from 'next/image';
-import { DownloadNowButton } from './download-now-button';
 
 interface SiteHeaderProps {
   isLoginPage?: boolean;
@@ -17,12 +16,16 @@ export function SiteHeader({ isLoginPage = false }: SiteHeaderProps) {
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logo.png"
-              alt="TRACKSY"
-              width={72}
-              height={72}
+              src="/logo.svg"
+              alt="LearnifyTube"
+              width={56}
+              height={56}
+              priority
               className="h-10 w-auto"
             />
+            <span className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
+              LearnifyTube
+            </span>
           </Link>
         </div>
         <div className="flex items-center space-x-6">

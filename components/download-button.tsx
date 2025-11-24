@@ -1,22 +1,23 @@
 'use client';
 
-import { handleDownload } from '@/utils/handleDownload';
 import { MouseEventHandler } from 'react';
+
+import { handleDownload } from '@/utils/handleDownload';
 
 export function DownloadButton() {
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
-    // Use the dynamically fetched links
     handleDownload();
   };
+
   return (
     <button
       onClick={handleClick}
-      className="relative rounded-full bg-amber-500 px-8 py-4 font-medium text-white hover:bg-amber-600"
+      className="relative flex items-center rounded-full bg-brand-gradient px-10 py-4 text-base font-semibold text-white shadow-xl shadow-primary/30 transition hover:translate-y-0.5 hover:opacity-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
     >
       Get the tracker for Free!
       <span className="absolute -right-4 -top-2">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white shadow-lg">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg shadow-accent/40">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

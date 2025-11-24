@@ -156,7 +156,7 @@ export default function Home() {
                     <span className="text-slate-700 dark:text-slate-200">
                       The{' '}
                     </span>
-                    <span className="text-amber-500">Smartest Way</span>
+                    <span className="bg-brand-gradient bg-clip-text text-transparent">Smartest Way</span>
                     <br />
                     <span className="text-slate-700 dark:text-slate-200">
                       To Learn Offline
@@ -180,7 +180,7 @@ export default function Home() {
                 {/* Right side - App screenshot */}
                 <div className="mt-8 w-full md:mt-0 md:w-1/2">
                   <div className="relative">
-                    <div className="absolute -left-2 -right-2 -top-2 bottom-4 z-0 rounded-full bg-amber-500 md:-left-4 md:-right-4 md:-top-4"></div>
+                    <div className="absolute -left-2 -right-2 -top-2 bottom-4 z-0 rounded-full bg-brand-gradient md:-left-4 md:-right-4 md:-top-4"></div>
 
                     <div className="relative z-10">
                       <div className="relative overflow-hidden rounded-lg border border-slate-200 shadow-xl">
@@ -231,7 +231,7 @@ export default function Home() {
               </div>
               <div className="mb-12 text-center">
                 <h2 className="text-4xl font-bold">
-                  <span className="text-amber-500">
+                  <span className="bg-brand-gradient bg-clip-text text-transparent">
                     Everything You Need for Offline Learning
                   </span>
                 </h2>
@@ -258,7 +258,7 @@ export default function Home() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
+                        className="mr-2 mt-1 text-primary"
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
@@ -275,7 +275,7 @@ export default function Home() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
+                        className="mr-2 mt-1 text-primary"
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
@@ -292,7 +292,7 @@ export default function Home() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
+                        className="mr-2 mt-1 text-primary"
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
@@ -303,7 +303,7 @@ export default function Home() {
                 <div className="md:w-3/5 lg:w-1/2">
                   <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
                     <Image
-                      src="/screenshots/activity-tracking.png"
+                      src="/screenshots/dashboard.png"
                       alt="Smart downloads interface in LearnifyTube"
                       width={800}
                       height={500}
@@ -319,7 +319,7 @@ export default function Home() {
                 <div className="md:w-3/5 lg:w-1/2">
                   <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
                     <Image
-                      src="/screenshots/project-management.png"
+                      src="/screenshots/player-playing.png"
                       alt="Learning focused interface in LearnifyTube"
                       width={800}
                       height={500}
@@ -347,7 +347,7 @@ export default function Home() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
+                        className="mr-2 mt-1 text-primary"
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
@@ -364,7 +364,7 @@ export default function Home() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
+                        className="mr-2 mt-1 text-primary"
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
@@ -381,7 +381,7 @@ export default function Home() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2 mt-1 text-amber-500"
+                        className="mr-2 mt-1 text-primary"
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
@@ -410,7 +410,7 @@ export default function Home() {
 
               <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
                 <Card className="flex flex-col items-center p-6 text-center">
-                  <div className="mb-4 rounded-full bg-amber-100 p-4 dark:bg-amber-900">
+                  <div className="mb-4 rounded-full bg-primary/10 p-4 dark:bg-primary/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -421,7 +421,7 @@ export default function Home() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-amber-500"
+                      className="text-primary"
                     >
                       <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                       <path d="M9 18c-4.51 2-5-2-7-2"></path>
