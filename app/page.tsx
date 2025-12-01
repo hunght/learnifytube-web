@@ -20,9 +20,6 @@ import { DownloadNowButton } from '@/components/download-now-button';
 import { PlatformDownloads } from '@/components/platform-downloads';
 
 import { siteConfig } from '@/config/site';
-import { appScreenshots } from '@/config/screenshots';
-import { CarouselItem } from '@/components/ui/carousel';
-import { AutoPlayCarousel } from '@/components/AutoPlayCarousel';
 import { GitHubButton } from '@/components/github-button';
 import { EmailSubscriptionForm } from '@/components/email-subscription-form';
 
@@ -92,14 +89,13 @@ export default function Home() {
         item={{
           '@context': 'https://schema.org',
           '@type': 'VideoObject',
-          name: 'LearnifyTube Demo Video',
+          name: 'LearnifyTube - The Smartest YouTube Downloader for Offline Learning',
           description:
             'Watch how LearnifyTube helps you download videos for offline learning',
-          thumbnailUrl: 'https://learnifytube.com/video-thumbnail.jpg',
-          uploadDate: '2023-04-15T08:00:00+08:00',
-          duration: 'PT1M20S',
-          contentUrl: 'https://learnifytube.com/demo-video.mp4',
-          embedUrl: 'https://www.youtube.com/embed/your-video-id',
+          thumbnailUrl: 'https://img.youtube.com/vi/pBTxg5TlHBA/maxresdefault.jpg',
+          uploadDate: '2025-01-27T00:00:00+00:00',
+          duration: 'PT2M30S',
+          embedUrl: 'https://www.youtube.com/embed/pBTxg5TlHBA',
         }}
       />
       <JsonLd<WebSite>
@@ -177,40 +173,22 @@ export default function Home() {
                   <PlatformDownloads />
                 </div>
 
-                {/* Right side - App screenshot */}
+                {/* Right side - YouTube video */}
                 <div className="mt-8 w-full md:mt-0 md:w-1/2">
                   <div className="relative">
                     <div className="absolute -left-2 -right-2 -top-2 bottom-4 z-0 rounded-full bg-brand-gradient md:-left-4 md:-right-4 md:-top-4"></div>
 
                     <div className="relative z-10">
                       <div className="relative overflow-hidden rounded-lg border border-slate-200 shadow-xl">
-                        <AutoPlayCarousel
-                          className="overflow-hidden rounded-lg"
-                          interval={5000}
-                          opts={{
-                            align: 'center',
-                            containScroll: 'trimSnaps',
-                          }}
-                        >
-                          {appScreenshots.map((image, index) => (
-                            <CarouselItem
-                              key={index}
-                              className="xs:basis-full sm:basis-full md:basis-full"
-                            >
-                              <div className="p-1">
-                                <Image
-                                  src={image.src}
-                                  alt={image.alt}
-                                  width={800}
-                                  height={500}
-                                  priority={index === 0}
-                                  className="w-full rounded-md"
-                                  sizes="(max-width: 768px) 100vw, 50vw"
-                                />
-                              </div>
-                            </CarouselItem>
-                          ))}
-                        </AutoPlayCarousel>
+                        <div className="relative aspect-video w-full">
+                          <iframe
+                            className="h-full w-full rounded-lg"
+                            src="https://www.youtube.com/embed/pBTxg5TlHBA"
+                            title="LearnifyTube - The Smartest YouTube Downloader for Offline Learning"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -665,8 +643,7 @@ export default function Home() {
                     <EmailSubscriptionForm />
                   </div>
                   <p className="mt-2 text-xs text-gray-500">
-                    We&apos;ll notify you about new features, updates, and
-                    mobile app releases.
+                    We&apos;ll notify you about new features and updates.
                   </p>
                 </div>
               </div>

@@ -24,9 +24,6 @@ const DownloadPage = () => {
   const [downloadStarted, setDownloadStarted] = useState(false);
   const [countdown, setCountdown] = useState(5);
   const [downloadUrl, setDownloadUrl] = useState('');
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-  const [subscribeError, setSubscribeError] = useState('');
 
   const handlePlatformDownload = useCallback(
     (platform: string, macArch?: string) => {
@@ -163,23 +160,6 @@ const DownloadPage = () => {
     }
   };
 
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Basic email validation
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-      setSubscribeError('Please enter a valid email address');
-      return;
-    }
-
-    setSubscribeError('');
-
-    // Simulate a short network delay for better UX
-    await new Promise((resolve) => setTimeout(resolve, 600));
-
-    setSubscribed(true);
-    setEmail('');
-  };
 
   return (
     <>
@@ -246,34 +226,9 @@ const DownloadPage = () => {
                   We detected you&apos;re using {getOsName()}
                 </span>
               </div>
-              {subscribed ? (
-                <p className="text-green-600">
-                  Thank you for subscribing! We&apos;ll notify you when the
-                  mobile version is available.
-                </p>
-              ) : (
-                <form onSubmit={handleSubscribe} className="space-y-4">
-                  <p className="text-gray-600">
-                    Mobile versions are coming soon! Subscribe to get notified:
-                  </p>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="w-full rounded-lg border border-gray-300 p-2"
-                  />
-                  {subscribeError && (
-                    <p className="text-sm text-red-600">{subscribeError}</p>
-                  )}
-                  <button
-                    type="submit"
-                    className="w-full rounded-lg bg-purple-600 px-4 py-2 font-medium text-white transition duration-300 hover:bg-purple-700"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              )}
+              <p className="text-gray-600">
+                LearnifyTube is currently available for desktop platforms only (Windows, macOS, and Linux). Please visit this page from your desktop computer to download the app.
+              </p>
             </div>
           ) : (
             <>

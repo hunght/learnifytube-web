@@ -49,60 +49,6 @@ export function PlatformDownloads() {
           </div>
           <span className="text-sm font-medium text-accent">Linux</span>
         </a>
-
-        <div
-          className="flex items-center space-x-1 rounded-md bg-success/10 px-3 py-1"
-          aria-label="Coming soon for Android"
-        >
-          <div className="flex h-8 w-8 items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-success"
-            >
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-              <circle cx="12" cy="18" r="1" />
-            </svg>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-medium text-success">Android</span>
-            <span className="text-xs text-success/80">Coming soon</span>
-          </div>
-        </div>
-
-        <div
-          className="flex items-center space-x-1 rounded-md bg-primary/10 px-3 py-1"
-          aria-label="Coming soon for iOS"
-        >
-          <div className="flex h-8 w-8 items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-primary"
-            >
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-              <path d="M12 18h.01" />
-            </svg>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-medium text-primary">iOS</span>
-            <span className="text-xs text-primary/80">Coming soon</span>
-          </div>
-        </div>
       </div>
       <div className="mt-4 flex flex-col space-y-2">
         <a

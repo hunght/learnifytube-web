@@ -1,0 +1,23 @@
+Are you tired of getting distracted while trying to learn on YouTube? Ads interrupting your flow, endless recommendations pulling you away, and the constant need for internet connection? What if you could download any educational content, organize it beautifully, and learn offline without any distractions?
+
+Meet LearnifyTube - the smartest learning-first YouTube downloader designed specifically for students, educators, and lifelong learners. It's not just another video downloader. LearnifyTube transforms how you consume educational content by giving you complete control over your learning experience.
+
+Let me show you what makes LearnifyTube special.
+
+First, education-ready downloads. With just one click, you can grab videos, entire playlists, shorts, transcripts, and subtitles. Whether you're saving a coding tutorial or an entire course playlist, LearnifyTube handles it all.
+
+Next, the smart knowledge hub. Tag your videos by subject, group them into courses, pin important timestamps, and add study notes. Everything stays searchable, so you can find exactly what you need, when you need it.
+
+Then there's offline learning anywhere. Once downloaded, your videos work perfectly on mobile devices, tablets, or classroom screens - with zero buffering, no matter where you are.
+
+LearnifyTube supports multiple formats - MP4, MP3, MKV, even 4K quality. Download subtitles in over 100 languages, and preserve all metadata so your library stays organized.
+
+The learning queue feature lets you drag and drop videos to prioritize your downloads, set flags for important content, and track everything in one place.
+
+The interface is beautiful and distraction-free, with light and dark themes. You can schedule downloads, automate your queue, and focus on what matters - learning.
+
+Best of all, LearnifyTube is privacy-first. All your data stays on your device. No accounts required, no telemetry, no tracking. Just you and your learning library.
+
+Perfect for college students saving lectures before exams. Ideal for teachers assembling lesson plans and blended-learning packs. Great for bootcamp learners collecting coding and design tutorials. And essential for knowledge workers building their personal research vaults.
+
+LearnifyTube is completely free and open source. Available for Windows, macOS, and Linux. Download it today and start building your offline knowledge library. Transform how you learn from YouTube. Download LearnifyTube now, and take control of your learning journey.
