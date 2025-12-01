@@ -1,27 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-  <title id="title">LearnifyTube Logo</title>
-  <desc id="desc">Stylized open book with a play button representing learning via video content.</desc>
+<svg width="200" height="200" viewBox="50 60 100 90" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#3B82F6" />
       <stop offset="100%" stop-color="#10B981" />
     </linearGradient>
-    <clipPath id="bookClip">
-      <rect x="16" y="32" width="224" height="192" rx="16" ry="16" />
-    </clipPath>
   </defs>
-  <!-- Book background -->
-  <rect x="16" y="32" width="224" height="192" rx="24" ry="24" fill="url(#grad)" />
-  <!-- Pages (subtle inner highlight) -->
-  <g clip-path="url(#bookClip)">
-    <path d="M32 48h96v160H32z" fill="rgba(255,255,255,0.12)" />
-    <path d="M128 48h96v160h-96z" fill="rgba(0,0,0,0.08)" />
-  </g>
-  <!-- Play button -->
-  <circle cx="128" cy="128" r="52" fill="rgba(0,0,0,0.15)" />
-  <path d="M114 100l52 28-52 28V100z" fill="#ffffff" />
-  <!-- Focus ring for accessibility (hidden by default) -->
-  <style>
-    svg:focus { outline: 4px solid #3B82F6; outline-offset: 4px; }
-  </style>
+
+  <!-- Book -->
+  <rect x="50" y="60" width="100" height="90" rx="4" fill="#3B82F6" opacity="0.9"/>
+  <rect x="52" y="62" width="96" height="86" rx="3" fill="white"/>
+  <line x1="100" y1="60" x2="100" y2="150" stroke="#3B82F6" stroke-width="2"/>
+  <line x1="65" y1="80" x2="90" y2="80" stroke="#3B82F6" stroke-width="2" opacity="0.3"/>
+  <line x1="65" y1="95" x2="90" y2="95" stroke="#3B82F6" stroke-width="2" opacity="0.3"/>
+  <line x1="110" y1="80" x2="135" y2="80" stroke="#3B82F6" stroke-width="2" opacity="0.3"/>
+  <line x1="110" y1="95" x2="135" y2="95" stroke="#3B82F6" stroke-width="2" opacity="0.3"/>
+
+  <!-- Play button screen -->
+  <rect x="70" y="110" width="60" height="40" rx="4" fill="url(#grad2)"/>
+  <path d="M 92 120 L 92 140 L 108 130 Z" fill="white"/>
 </svg>

@@ -15,7 +15,7 @@ export function DownloadButton() {
       onClick={handleClick}
       className="relative flex items-center rounded-full bg-brand-gradient px-10 py-4 text-base font-semibold text-white shadow-xl shadow-primary/30 transition hover:translate-y-0.5 hover:opacity-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
     >
-      Get the tracker for Free!
+      Get LearnifyTube for Free!
       <span className="absolute -right-4 -top-2">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg shadow-accent/40">
           <svg
