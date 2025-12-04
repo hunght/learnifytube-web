@@ -1,12 +1,7 @@
-const DEFAULT_RELEASE_URL =
-  'https://github.com/hunght/LearnifyTube/releases/latest';
-
+// Allow passing custom app links or fallback to default
 export const handleDownload = () => {
-  if (typeof window === 'undefined') {
-    return;
-  }
-
-  window.location.href = DEFAULT_RELEASE_URL;
+  // Redirect to the download page where auto-detection happens
+  window.location.href = '/download';
 };
 
 export const getPlatformDownloadUrl = (customAppLinks: {
