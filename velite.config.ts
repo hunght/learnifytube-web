@@ -22,6 +22,7 @@ const posts = defineCollection({
       body: s.mdx(),
       thumbnail: s.string().optional(),
       thumbnail_alt_text: s.string().optional(),
+      video: s.string().optional(),
     })
     .transform(computedFields),
 });

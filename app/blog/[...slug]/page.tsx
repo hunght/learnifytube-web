@@ -37,15 +37,19 @@ export async function generateMetadata({
   const imageUrl =
     post.thumbnail || `${siteConfig.url}/api/og?${ogSearchParams.toString()}`;
 
-  return {
+  // Check if post has a video for Twitter/X video card
+  const videoUrl = post.video ? `${siteConfig.url}${post.video}` : null;
+  const postUrl = `${siteConfig.url}${post.slug}`;
+
+  const metadata: Metadata = {
     title: `${post.title} | ${siteConfig.name}`,
     description: post.description,
     authors: { name: siteConfig.author },
     openGraph: {
       title: post.title,
       description: post.description,
-      type: 'article',
-      url: `${siteConfig.url}${post.slug}`,
+      type: videoUrl ? 'video.other' : 'article',
+      url: postUrl,
       publishedTime: post.date,
       modifiedTime: post.date,
       images: [
@@ -56,14 +60,46 @@ export async function generateMetadata({
           alt: post.thumbnail_alt_text || post.title,
         },
       ],
+      ...(videoUrl && {
+        videos: [
+          {
+            url: videoUrl,
+            type: 'video/mp4',
+            width: 1280,
+            height: 720,
+          },
+        ],
+      }),
     },
     twitter: {
-      card: 'summary_large_image',
+      card: videoUrl ? 'player' : 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: [imageUrl],
+      images: videoUrl ? [imageUrl] : [imageUrl],
+      ...(videoUrl && {
+        player: {
+          url: postUrl,
+          stream: videoUrl,
+          width: 1280,
+          height: 720,
+        },
+      }),
     },
+    other: videoUrl
+      ? {
+          'og:video': videoUrl,
+          'og:video:type': 'video/mp4',
+          'og:video:width': '1280',
+          'og:video:height': '720',
+          'twitter:player': postUrl,
+          'twitter:player:stream': videoUrl,
+          'twitter:player:width': '1280',
+          'twitter:player:height': '720',
+        }
+      : {},
   };
+
+  return metadata;
 }
 
 export async function generateStaticParams(): Promise<
