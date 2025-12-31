@@ -5,9 +5,14 @@ import { cn } from '@/lib/utils';
 
 import { Providers } from '@/components/providers';
 import { siteConfig } from '@/config/site';
+import dynamic from 'next/dynamic';
 
-import { Toaster } from '@/components/ui/toaster';
 import { PostHogProvider } from './posthogProvider';
+
+// Dynamically import Toaster with SSR disabled to avoid context issues during static generation
+const Toaster = dynamic(() => import('@/components/ui/toaster').then((mod) => ({ default: mod.Toaster })), {
+  ssr: false,
+});
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
