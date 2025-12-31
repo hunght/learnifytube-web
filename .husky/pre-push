@@ -2,14 +2,10 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo "🔨 Running build before push..."
-pnpm build
-
-if [ $? -ne 0 ]; then
+pnpm build || {
   echo "⚠️  Build failed, but allowing push to continue..."
   echo "⚠️  Please fix build errors in a follow-up commit."
-  # Temporarily allow push even if build fails
-  # exit 1
-fi
+}
 
 echo "✅ Proceeding with push..."
 
