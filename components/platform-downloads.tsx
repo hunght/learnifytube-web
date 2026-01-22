@@ -8,9 +8,9 @@ export function PlatformDownloads() {
   const { links } = useAppVersion();
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <p className="mb-2 text-sm text-muted-foreground">Available on</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center justify-center gap-4">
         <a
           href={links.windows}
           target="_blank"
@@ -50,7 +50,7 @@ export function PlatformDownloads() {
           <span className="text-sm font-medium text-accent">Linux</span>
         </a>
       </div>
-      <div className="mt-4 flex flex-col space-y-2">
+      <div className="mt-4 flex flex-col items-center space-y-2">
         <a
           href={links.releases}
           target="_blank"

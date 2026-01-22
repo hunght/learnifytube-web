@@ -229,12 +229,12 @@ export default function Home() {
                 </div>
 
                 {/* Platform Downloads */}
-                <div className="mb-12">
+                <div className="mb-12 flex justify-center">
                   <PlatformDownloads />
                 </div>
 
                 {/* Demo Video with Terminal Chrome */}
-                <div className="mx-auto max-w-4xl">
+                <div className="mx-auto max-w-5xl">
                   <div className="relative">
                     {/* Gradient glow behind video */}
                     <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-green-500/20 blur-2xl"></div>
