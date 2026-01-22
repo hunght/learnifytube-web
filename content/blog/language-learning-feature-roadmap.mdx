@@ -1,0 +1,228 @@
+---
+title: "How LearnifyTube Stacks Up Against Top Language Learning Tools"
+description: We analyzed the features of popular language learning apps like Language Reactor, LLPlayer, and Knowclip. Here's what LearnifyTube already offers and what's coming next.
+date: 2026-01-22
+published: true
+tags: ["Language Learning", "Feature Comparison", "Roadmap", "Offline Learning", "Study Tools"]
+video: "/blog/language-learning-feature-roadmap/demo.webm"
+---
+
+<div className="my-8">
+  <video autoPlay loop muted playsInline className="w-full rounded-lg shadow-lg">
+    <source src="/blog/language-learning-feature-roadmap/demo.webm" type="video/webm" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+Building a language learning app means understanding what learners actually need. We recently conducted a deep analysis comparing LearnifyTube against industry leaders like [Language Reactor](https://languagereactor.com/), [LLPlayer](https://github.com/umlx5h/LLPlayer), [Knowclip](https://www.knowclip.com/), and other popular tools.
+
+The results surprised us: **LearnifyTube already covers approximately 80% of the features** that define best-in-class language learning video players.
+
+## The Research: What Language Learners Need
+
+We categorized essential features into four tiers based on user research and competitive analysis:
+
+| Tier | Focus Area | Priority |
+|------|------------|----------|
+| **Tier 1** | Core Playback & Learning Controls | Critical |
+| **Tier 2** | Enhanced Learning Aids & Organization | High |
+| **Tier 3** | UI and Accessibility | Medium |
+| **Tier 4** | Offline Integration & Utilities | Nice-to-have |
+
+Let's see how LearnifyTube performs in each category.
+
+---
+
+## Tier 1: Core Playback & Learning Controls
+
+These are the non-negotiable features every language learner needs.
+
+### Fine-Grained Speed Control
+
+**Status: Fully Implemented**
+
+Slow down native speakers to catch every syllable. LearnifyTube offers 8 speed levels from **0.25x to 2.0x**, letting you find the perfect pace for comprehension practice.
+
+### Subtitle Synchronization & Transcript Viewing
+
+**Status: Fully Implemented**
+
+- Multi-language transcript support
+- Full VTT format parsing
+- Click any transcript line to jump to that moment
+- Transcripts stay synced with playback
+
+### Instant Dictionary & Word Lookup
+
+**Status: Fully Implemented**
+
+Click any word in the transcript to get instant translations. Results are cached locally, so repeated lookups are instant. Support for multiple target languages means you can learn from content in any language.
+
+### Bookmarking & Segment Notes
+
+**Status: Fully Implemented**
+
+Mark important moments with our annotation system:
+- **Text notes** tied to specific timestamps
+- **Emoji reactions** for quick marking (confused, insight, important, bookmark)
+- Review all annotations in a dedicated sidebar
+
+### Keyboard Shortcuts & Dark Mode
+
+**Status: Fully Implemented**
+
+Full keyboard control for hands-free learning:
+- `J` / `L` – Skip ±10 seconds
+- `←` / `→` – Skip ±5 seconds
+- `K` / `Space` – Play/Pause
+- Mouse wheel – Fine scrubbing
+
+Plus a proper dark mode for late-night study sessions.
+
+---
+
+## Tier 2: Enhanced Learning Aids & Organization
+
+Features that transform passive watching into active learning.
+
+### Dual Subtitles
+
+**Status: Fully Implemented**
+
+Display two languages simultaneously – perfect for comparing your target language with translations. Select your primary and secondary languages, and both appear inline as you watch.
+
+### Flashcard & Quiz Integration
+
+**Status: Fully Implemented**
+
+This is where LearnifyTube shines. We've built a complete spaced repetition system:
+
+- **SM-2 Algorithm** – The same algorithm that powers Anki
+- **Three card types** – Basic, cloze deletion, and concept cards
+- **Screenshot capture** – Save video frames for visual memory cues
+- **AI-generated quizzes** – Multiple choice, true/false, and fill-in-the-blank
+- **SRS calendar** – Visualize your review schedule
+
+No need for external flashcard apps – everything stays in one place.
+
+### Library Organization
+
+**Status: Fully Implemented**
+
+Keep your learning content organized:
+- Import entire YouTube playlists
+- Create custom playlists for different topics or difficulty levels
+- Track watch progress across all videos
+- View statistics per playlist
+
+### Advanced Subtitle Tools
+
+**Status: Partial**
+
+Currently you can click transcript segments to seek. What we're still working on:
+- Full-text search across all transcripts
+- Subtitle-based scrubbing
+
+---
+
+## Tier 3: UI and Accessibility
+
+Making the app comfortable for everyone.
+
+### Dyslexia-Friendly Fonts
+
+**Status: Fully Implemented**
+
+Switch to **OpenDyslexic** font with one click. Research shows that dyslexia-friendly typefaces with weighted bottoms help readers distinguish letters more easily.
+
+### Scalable Interface
+
+**Status: Fully Implemented**
+
+Customize the UI density to your preference:
+- **Compact** – Maximum content, minimum chrome
+- **Comfortable** – Balanced default
+- **Spacious** – Larger touch targets, easier reading
+
+Plus adjustable font sizes from Small to Extra Large.
+
+### Volume Normalization
+
+**Status: Not Yet Implemented**
+
+This is on our radar. Jumping between videos with different audio levels is jarring – we plan to add automatic loudness leveling.
+
+---
+
+## Tier 4: Offline Integration
+
+Working without an internet connection.
+
+### yt-dlp Integration
+
+**Status: Fully Implemented**
+
+LearnifyTube is built around yt-dlp for reliable video downloads. Paste a URL and we handle the rest – video, audio, thumbnails, and subtitles all downloaded together.
+
+### Export Capabilities
+
+**Status: Partial**
+
+Your flashcards and notes are stored locally with all the data needed for export. We're working on direct Anki `.apkg` export and transcript download features.
+
+### Local AI Features
+
+**Status: Partial**
+
+AI summaries and quiz generation work through our API integration. For fully offline AI (like local Whisper transcription), we've architected the app to support future plugins.
+
+---
+
+## What's Coming Next
+
+Based on this analysis, here's our development priority:
+
+### High Priority
+
+1. **A-B Repeat Looping** – The most-requested missing feature. Essential for shadowing practice and pronunciation drilling. Set a loop region and repeat until you've mastered that phrase.
+
+### Medium Priority
+
+2. **Transcript Search** – Search across all your downloaded video transcripts. Find "that video where they explained subjunctive" instantly.
+
+3. **Volume Normalization** – Automatic loudness leveling during download or playback.
+
+4. **Anki Export** – One-click export of your flashcard decks to `.apkg` format.
+
+### Future Considerations
+
+5. **Drag-and-drop import** – Currently URL-based, but file dropping would be convenient
+6. **Local Whisper ASR** – Generate transcripts for videos that don't have captions
+7. **Offline dictionary** – Bundled dictionary data for lookups without internet
+
+---
+
+## Features We Have That Others Don't
+
+Our analysis also revealed features LearnifyTube offers beyond the typical roadmap:
+
+- **Learning Analytics Dashboard** – Track study streaks, words learned, and review forecasts
+- **Picture-in-Picture Mode** – Keep watching while you work
+- **Video Optimization** – Compress downloads to save storage space
+- **Audio Pronunciation** – Text-to-speech for any word or phrase
+- **Storage Management** – View and manage disk usage per video
+- **Background Jobs** – Downloads continue while you study
+
+---
+
+## Built for Serious Language Learners
+
+LearnifyTube isn't trying to be everything. We're focused on one thing: **making video-based language learning as effective as possible**.
+
+Whether you're studying Japanese through anime, learning Spanish from YouTube teachers, or improving your English with TED talks, LearnifyTube gives you the tools to turn any video into a learning resource.
+
+[**Download LearnifyTube**](/download) and see how we compare for yourself.
+
+---
+
+*Have a feature request? We'd love to hear what would make your language learning workflow better.*

@@ -6,9 +6,7 @@ import { SiteFooter } from '@/components/site-footer';
 
 import { JsonLd } from 'react-schemaorg';
 import { WebSite, SoftwareApplication, VideoObject } from 'schema-dts';
-import Image from 'next/image';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import {
   Card,
   CardHeader,
@@ -24,16 +22,16 @@ import { GitHubButton } from '@/components/github-button';
 import { EmailSubscriptionForm } from '@/components/email-subscription-form';
 
 const description =
-  'LearnifyTube: Open-source YouTube downloader for learning. Download videos, playlists, and channels with our free, privacy-focused desktop app for Windows, macOS, and Linux.';
+  'LearnifyTube: The ultimate offline language learning video player. Download YouTube videos with dual subtitles, flashcards, spaced repetition, and AI-powered study tools.';
 
 export const metadata: Metadata = {
-  title: 'LearnifyTube: Free Open-Source YouTube Downloader for Learners',
+  title: 'LearnifyTube: Offline Language Learning Video Player',
   description: description,
   keywords:
-    'youtube downloader, video downloader, open-source, desktop app, learning, education, offline viewing, free youtube downloader',
+    'language learning, youtube downloader, dual subtitles, flashcards, spaced repetition, offline learning, video player, anki alternative',
   viewport: 'width=device-width, initial-scale=1',
   openGraph: {
-    title: 'LearnifyTube - Free Open-Source YouTube Downloader',
+    title: 'LearnifyTube - Offline Language Learning Video Player',
     description: description,
     type: 'website',
     url: 'https://learnifytube.com',
@@ -50,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LearnifyTube - Free Open-Source YouTube Downloader',
+    title: 'LearnifyTube - Offline Language Learning Video Player',
     description: description,
     images: [
       {
@@ -74,13 +72,83 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'verification_token', // Replace with your actual Google verification token if you have one
-  },
 };
 
+// Feature data based on roadmap analysis
+const features = [
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    ),
+    title: 'Precise Playback Control',
+    description: 'Fine-grained speed control from 0.25x to 2.0x. Full keyboard shortcuts for hands-free learning. J/K/L navigation just like YouTube.',
+    color: 'bg-blue-500',
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        <line x1="9" y1="10" x2="15" y2="10"></line>
+      </svg>
+    ),
+    title: 'Dual Subtitles',
+    description: 'Display two languages simultaneously. Click any word for instant translation. Perfect for comparing native and target language.',
+    color: 'bg-green-500',
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <path d="M10 4v4"></path>
+        <path d="M2 8h20"></path>
+        <path d="M6 4v4"></path>
+      </svg>
+    ),
+    title: 'Spaced Repetition Flashcards',
+    description: 'Built-in SM-2 algorithm like Anki. Create cards from any subtitle. Track your learning with SRS calendar and progress charts.',
+    color: 'bg-purple-500',
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+        <path d="M2 17l10 5 10-5"></path>
+        <path d="M2 12l10 5 10-5"></path>
+      </svg>
+    ),
+    title: 'AI-Powered Learning',
+    description: 'Auto-generate video summaries and quizzes. Multiple choice, true/false, and fill-in-the-blank questions from any video content.',
+    color: 'bg-amber-500',
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+      </svg>
+    ),
+    title: 'Accessibility First',
+    description: 'OpenDyslexic font support. Scalable UI with compact, comfortable, and spacious modes. Full dark mode for comfortable viewing.',
+    color: 'bg-teal-500',
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        <path d="M9 14l2 2 4-4"></path>
+      </svg>
+    ),
+    title: 'Smart Organization',
+    description: 'Import entire YouTube playlists and channels. Create custom playlists. Track watch progress and learning analytics across all videos.',
+    color: 'bg-rose-500',
+  },
+];
+
 export default function Home() {
-  const latestPosts = sortPosts(posts).slice(0, 5);
+  const latestPosts = sortPosts(posts).slice(0, 3);
 
   return (
     <>
@@ -89,13 +157,11 @@ export default function Home() {
         item={{
           '@context': 'https://schema.org',
           '@type': 'VideoObject',
-          name: 'LearnifyTube - The Smartest YouTube Downloader for Offline Learning',
-          description:
-            'Watch how LearnifyTube helps you download videos for offline learning',
-          thumbnailUrl: 'https://img.youtube.com/vi/pBTxg5TlHBA/maxresdefault.jpg',
-          uploadDate: '2025-01-27T00:00:00+00:00',
+          name: 'LearnifyTube - Offline Language Learning Video Player',
+          description: 'Watch how LearnifyTube helps you learn languages from videos',
+          thumbnailUrl: 'https://learnifytube.com/logo-300.png',
+          uploadDate: '2026-01-22T00:00:00+00:00',
           duration: 'PT2M30S',
-          embedUrl: 'https://www.youtube.com/embed/pBTxg5TlHBA',
         }}
       />
       <JsonLd<WebSite>
@@ -104,7 +170,6 @@ export default function Home() {
           '@type': 'WebSite',
           name: 'LearnifyTube',
           url: 'https://learnifytube.com',
-
           description: description,
           inLanguage: 'en-US',
           sameAs: [
@@ -119,7 +184,7 @@ export default function Home() {
           '@context': 'https://schema.org',
           '@type': 'SoftwareApplication',
           name: 'LearnifyTube',
-          applicationCategory: 'MultimediaApplication',
+          applicationCategory: 'EducationalApplication',
           operatingSystem: 'Windows, macOS, Linux',
           offers: {
             '@type': 'Offer',
@@ -134,61 +199,67 @@ export default function Home() {
           downloadUrl: 'https://learnifytube.com/download',
         }}
       />
+
       <div className="min-h-dvh relative flex flex-col bg-background">
         <SiteHeader />
         <main className="flex-1">
-          <section
-            className="hero-section py-16"
-            aria-label="Main hero section"
-          >
+          {/* Hero Section */}
+          <section className="hero-section py-12 md:py-20" aria-label="Main hero section">
             <div className="container mx-auto px-4">
-              <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
-                {/* Left side - Text content */}
-                <div className="flex flex-col md:w-1/2">
-                  <h1
-                    className="mb-6 text-4xl font-bold md:text-5xl"
-                    itemProp="headline"
-                  >
-                    <span className="text-slate-700 dark:text-slate-200">
-                      The{' '}
-                    </span>
-                    <span className="bg-brand-gradient bg-clip-text text-transparent">Smartest Way</span>
-                    <br />
-                    <span className="text-slate-700 dark:text-slate-200">
-                      To Learn Offline
-                    </span>
-                  </h1>
-                  <p
-                    className="mb-8 text-lg text-muted-foreground"
-                    itemProp="description"
-                  >
-                    Level up your learning with the smartest YouTube downloader.
-                    Download videos, playlists, and channels for offline viewing.
-                    No ads, no tracking, just learning.
-                  </p>
-                  <div className="mb-8">
-                    <DownloadButton />
-                  </div>
+              <div className="text-center">
+                {/* Headline */}
+                <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
+                  <span className="text-foreground">Learn languages from </span>
+                  <span className="bg-brand-gradient bg-clip-text text-transparent">any video</span>
+                </h1>
+                <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  The offline video player built for language learners. Dual subtitles, instant translation, flashcards with spaced repetition, and AI-powered study tools.
+                </p>
 
+                {/* CTA Buttons */}
+                <div className="mb-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                  <DownloadButton />
+                  <GitHubButton
+                    href="https://github.com/hunght/LearnifyTube"
+                    type="star"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                  >
+                    Star on GitHub
+                  </GitHubButton>
+                </div>
+
+                {/* Platform Downloads */}
+                <div className="mb-12">
                   <PlatformDownloads />
                 </div>
 
-                {/* Right side - YouTube video */}
-                <div className="mt-8 w-full md:mt-0 md:w-1/2">
+                {/* Demo Video with Terminal Chrome */}
+                <div className="mx-auto max-w-4xl">
                   <div className="relative">
-                    <div className="absolute -left-2 -right-2 -top-2 bottom-4 z-0 rounded-full bg-brand-gradient md:-left-4 md:-right-4 md:-top-4"></div>
+                    {/* Gradient glow behind video */}
+                    <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-green-500/20 blur-2xl"></div>
 
-                    <div className="relative z-10">
-                      <div className="relative overflow-hidden rounded-lg border border-slate-200 shadow-xl">
-                        <div className="relative aspect-video w-full">
-                          <iframe
-                            className="h-full w-full rounded-lg"
-                            src="https://www.youtube.com/embed/pBTxg5TlHBA"
-                            title="LearnifyTube - The Smartest YouTube Downloader for Offline Learning"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                          />
-                        </div>
+                    {/* Terminal window */}
+                    <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-900 shadow-2xl dark:border-slate-700">
+                      {/* Terminal header with macOS buttons */}
+                      <div className="flex items-center gap-2 border-b border-slate-700 bg-slate-800 px-4 py-3">
+                        <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                        <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                        <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                        <span className="ml-4 text-sm text-slate-400">LearnifyTube Demo</span>
+                      </div>
+                      {/* Video */}
+                      <div className="aspect-video w-full">
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="h-full w-full"
+                        >
+                          <source src="/demo.webm" type="video/webm" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
                     </div>
                   </div>
@@ -197,210 +268,75 @@ export default function Home() {
             </div>
           </section>
 
-          <section
-            className="features-section bg-slate-800 py-16 text-white"
-            aria-label="Key features section"
-          >
+          {/* Features Section */}
+          <section className="features-section bg-slate-800 py-16 text-white" aria-label="Key features section">
             <div className="container mx-auto px-4">
               <div className="mb-6 text-center">
-                <h3 className="text-lg font-medium text-slate-300">
+                <span className="inline-block rounded-full bg-blue-500/20 px-4 py-1 text-sm font-medium text-blue-400">
                   POWERFUL FEATURES
-                </h3>
+                </span>
               </div>
               <div className="mb-12 text-center">
-                <h2 className="text-4xl font-bold">
+                <h2 className="text-3xl font-bold md:text-4xl">
                   <span className="bg-brand-gradient bg-clip-text text-transparent">
-                    Everything You Need for Offline Learning
+                    Everything you need to learn from videos
                   </span>
                 </h2>
+                <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+                  Compared against Language Reactor, LLPlayer, and Knowclip – LearnifyTube covers 80% of essential language learning features, plus extras they don&apos;t have.
+                </p>
               </div>
 
-              {/* Smart Downloads Feature */}
-              <div className="mb-24 flex flex-col items-center md:flex-row md:items-start md:justify-between">
-                <div className="mb-8 flex flex-col space-y-4 md:mb-0 md:w-2/5">
-                  <h3 className="text-2xl font-bold">Smart Downloads</h3>
-                  <p className="text-slate-300">
-                    Download entire playlists and channels with a single click.
-                    LearnifyTube organizes your content intelligently for the
-                    best offline learning experience.
-                  </p>
-                  <ul className="space-y-2 text-slate-300">
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-primary"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Playlist & Channel downloads</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-primary"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Auto-generated subtitles</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-primary"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>High-quality video & audio</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="md:w-3/5 lg:w-1/2">
-                  <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
-                    <Image
-                      src="/screenshots/dashboard.png"
-                      alt="Smart downloads interface in LearnifyTube"
-                      width={800}
-                      height={500}
-                      className="w-full"
-                      loading="lazy"
-                    />
+              {/* Feature Grid */}
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="group rounded-xl border border-slate-700 bg-slate-800/50 p-6 transition-all hover:border-slate-600 hover:bg-slate-800"
+                  >
+                    <div className={`mb-4 inline-flex rounded-lg ${feature.color} p-3 text-white`}>
+                      {feature.icon}
+                    </div>
+                    <h3 className="mb-2 text-xl font-semibold text-white">
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-400">
+                      {feature.description}
+                    </p>
                   </div>
-                </div>
+                ))}
               </div>
 
-              {/* Learning Focused Feature */}
-              <div className="mb-24 flex flex-col-reverse items-center md:flex-row md:items-start md:justify-between">
-                <div className="md:w-3/5 lg:w-1/2">
-                  <div className="transform overflow-hidden rounded-lg border-4 border-slate-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
-                    <Image
-                      src="/screenshots/player-playing.png"
-                      alt="Learning focused interface in LearnifyTube"
-                      width={800}
-                      height={500}
-                      className="w-full"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <div className="mb-8 flex flex-col space-y-4 md:mb-0 md:w-2/5">
-                  <h3 className="text-2xl font-bold">Learning Focused</h3>
-                  <p className="text-slate-300">
-                    Designed for learners, not just downloaders. Organize your
-                    videos by topic, track your progress, and take notes directly
-                    within the app.
-                  </p>
-                  <ul className="space-y-2 text-slate-300">
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-primary"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Distraction-free player</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-primary"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Note-taking integration</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 mt-1 text-primary"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Progress tracking</span>
-                    </li>
-                  </ul>
+              {/* Coming Soon Badge */}
+              <div className="mt-12 text-center">
+                <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500"></span>
+                  </span>
+                  <span className="text-sm font-medium text-amber-400">Coming Soon: A-B Repeat Looping for shadowing practice</span>
                 </div>
               </div>
             </div>
           </section>
 
-          <section
-            className="open-source-section bg-slate-50 py-16 dark:bg-slate-900"
-            aria-label="Open Source Section"
-          >
+          {/* Open Source Section */}
+          <section className="open-source-section bg-slate-50 py-16 dark:bg-slate-900" aria-label="Open Source Section">
             <div className="container mx-auto px-4">
               <div className="mb-10 text-center">
                 <h2 className="mb-4 text-3xl font-bold">
-                  Open Source & Community-Driven
+                  Open Source & Privacy-First
                 </h2>
                 <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                  LearnifyTube is proudly open source. We believe in transparency,
-                  collaboration, and community-driven development.
+                  Your learning data stays on your device. No accounts, no cloud sync, no tracking.
+                  LearnifyTube is 100% open source and community-driven.
                 </p>
               </div>
 
               <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
                 <Card className="flex flex-col items-center p-6 text-center">
                   <div className="mb-4 rounded-full bg-primary/10 p-4 dark:bg-primary/20">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-primary"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                       <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                       <path d="M9 18c-4.51 2-5-2-7-2"></path>
                     </svg>
@@ -408,8 +344,7 @@ export default function Home() {
                   <CardHeader className="p-0">
                     <CardTitle className="mb-2 text-xl">Contribute</CardTitle>
                     <CardDescription>
-                      Help us improve LearnifyTube by contributing code, reporting
-                      bugs, or suggesting new features.
+                      Help us build the best language learning video player. Code, ideas, and feedback welcome.
                     </CardDescription>
                   </CardHeader>
                   <div className="mt-auto pt-4">
@@ -420,18 +355,7 @@ export default function Home() {
                       className="inline-flex items-center text-sm font-medium text-primary hover:underline"
                     >
                       View on GitHub
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="ml-1"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
                         <path d="M5 12h14"></path>
                         <path d="m12 5 7 7-7 7"></path>
                       </svg>
@@ -441,18 +365,7 @@ export default function Home() {
 
                 <Card className="flex flex-col items-center p-6 text-center">
                   <div className="mb-4 rounded-full bg-blue-100 p-4 dark:bg-blue-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-blue-500"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
                       <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                       <polyline points="14 2 14 8 20 8"></polyline>
                       <path d="M12 18v-6"></path>
@@ -461,12 +374,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <CardHeader className="p-0">
-                    <CardTitle className="mb-2 text-xl">
-                      Documentation
-                    </CardTitle>
+                    <CardTitle className="mb-2 text-xl">Documentation</CardTitle>
                     <CardDescription>
-                      Explore our documentation to learn about LearnifyTube&apos;s
-                      features, architecture, and development process.
+                      Learn about all features, keyboard shortcuts, and how to get the most out of LearnifyTube.
                     </CardDescription>
                   </CardHeader>
                   <div className="mt-auto pt-4">
@@ -477,18 +387,7 @@ export default function Home() {
                       className="inline-flex items-center text-sm font-medium text-primary hover:underline"
                     >
                       Read Docs
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="ml-1"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
                         <path d="M5 12h14"></path>
                         <path d="m12 5 7 7-7 7"></path>
                       </svg>
@@ -498,18 +397,7 @@ export default function Home() {
 
                 <Card className="flex flex-col items-center p-6 text-center">
                   <div className="mb-4 rounded-full bg-green-100 p-4 dark:bg-green-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-green-500"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500">
                       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                       <circle cx="9" cy="7" r="4"></circle>
                       <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -519,8 +407,7 @@ export default function Home() {
                   <CardHeader className="p-0">
                     <CardTitle className="mb-2 text-xl">Community</CardTitle>
                     <CardDescription>
-                      Join our community of developers and users to discuss
-                      ideas, share feedback, and get support.
+                      Join language learners and developers. Share tips, request features, get help.
                     </CardDescription>
                   </CardHeader>
                   <div className="mt-auto pt-4">
@@ -531,18 +418,7 @@ export default function Home() {
                       className="inline-flex items-center text-sm font-medium text-primary hover:underline"
                     >
                       Join Discord
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="ml-1"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
                         <path d="M5 12h14"></path>
                         <path d="m12 5 7 7-7 7"></path>
                       </svg>
@@ -593,14 +469,9 @@ export default function Home() {
             </div>
           </section>
 
-          <section
-            className="blog-section container mx-auto px-4 py-16"
-            aria-label="Latest blog posts"
-          >
-            <h2
-              className="mb-12 text-center text-3xl font-bold"
-              id="latest-posts"
-            >
+          {/* Blog Section */}
+          <section className="blog-section container mx-auto px-4 py-16" aria-label="Latest blog posts">
+            <h2 className="mb-12 text-center text-3xl font-bold" id="latest-posts">
               Latest Posts
             </h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -617,55 +488,26 @@ export default function Home() {
             </div>
           </section>
 
-          <section
-            className="cta-section bg-primary/10 py-16"
-            aria-label="Call to action"
-          >
+          {/* CTA Section */}
+          <section className="cta-section bg-gradient-to-r from-blue-600 to-green-600 py-16" aria-label="Call to action">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="mb-6 text-3xl font-bold" id="cta-heading">
-                Ready to Boost Your Learning?
+              <h2 className="mb-6 text-3xl font-bold text-white" id="cta-heading">
+                Start Learning from Videos Today
               </h2>
-              <p className="mb-8 text-lg">
-                Join the growing community of learners who are mastering new skills
-                more effectively with LearnifyTube.
+              <p className="mb-8 text-lg text-white/80">
+                Join thousands of language learners using LearnifyTube for immersive, offline video learning.
               </p>
-              <DownloadNowButton size="lg">
-                Download LearnifyTube Now
+              <DownloadNowButton size="lg" className="bg-white text-blue-600 hover:bg-white/90">
+                Download Free
               </DownloadNowButton>
 
-              {/* Email Subscription Component */}
+              {/* Email Subscription */}
               <div className="mt-8 text-center">
-                <p className="mb-4 text-lg font-medium">
-                  Or subscribe for updates
+                <p className="mb-4 text-sm font-medium text-white/80">
+                  Get notified about new features
                 </p>
                 <div className="mx-auto max-w-md">
-                  <div className="relative">
-                    <EmailSubscriptionForm />
-                  </div>
-                  <p className="mt-2 text-xs text-gray-500">
-                    We&apos;ll notify you about new features and updates.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 flex flex-col items-center space-y-4">
-                <div className="mt-2 flex items-center space-x-6">
-                  <GitHubButton
-                    href={siteConfig.links.github}
-                    type="contribute"
-                    className="text-sm text-gray-600 transition-colors hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    aria-label="Contribute on GitHub"
-                  >
-                    Contribute on GitHub
-                  </GitHubButton>
-                  <GitHubButton
-                    href={`${siteConfig.links.github}/issues`}
-                    type="issue"
-                    className="text-sm text-gray-600 transition-colors hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    aria-label="Report issues"
-                  >
-                    Report Issues
-                  </GitHubButton>
+                  <EmailSubscriptionForm />
                 </div>
               </div>
             </div>
