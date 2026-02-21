@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getLatestVersionFromApi, buildAppLinks } from '@/config/app-links';
-const fallbackVersion = 'v1.0.163';
+import {
+  getLatestVersionFromApi,
+  buildAppLinks,
+  getLatestAndroidApkUrlFromApi,
+} from '@/config/app-links';
+
+const fallbackVersion = '1.0.163';
 export function useAppVersion() {
   const [version, setVersion] = useState(fallbackVersion);
   const [links, setLinks] = useState(buildAppLinks(fallbackVersion));
@@ -11,16 +16,36 @@ export function useAppVersion() {
 
   useEffect(() => {
     async function fetchVersion() {
-      try {
-        const latestVersion = await getLatestVersionFromApi();
-        setVersion(latestVersion);
-        setLinks(buildAppLinks(latestVersion));
-      } catch (err) {
-        console.error('Failed to load version:', err);
-        setError(err instanceof Error ? err : new Error('Unknown error'));
-      } finally {
-        setLoading(false);
+      const [versionResult, androidApkResult] = await Promise.allSettled([
+        getLatestVersionFromApi(),
+        getLatestAndroidApkUrlFromApi(),
+      ]);
+
+      const latestVersion =
+        versionResult.status === 'fulfilled'
+          ? versionResult.value
+          : fallbackVersion;
+      const latestAndroidApkUrl =
+        androidApkResult.status === 'fulfilled'
+          ? androidApkResult.value
+          : undefined;
+
+      setVersion(latestVersion);
+      setLinks(buildAppLinks(latestVersion, latestAndroidApkUrl));
+
+      if (
+        versionResult.status === 'rejected' ||
+        androidApkResult.status === 'rejected'
+      ) {
+        const reason =
+          versionResult.status === 'rejected'
+            ? versionResult.reason
+            : androidApkResult.reason;
+        console.error('Failed to load download metadata:', reason);
+        setError(reason instanceof Error ? reason : new Error('Unknown error'));
       }
+
+      setLoading(false);
     }
 
     fetchVersion();

@@ -16,6 +16,7 @@ import {
 import { DownloadButton } from '@/components/download-button';
 import { DownloadNowButton } from '@/components/download-now-button';
 import { PlatformDownloads } from '@/components/platform-downloads';
+import { AndroidDownloadButton } from '@/components/android-download-button';
 
 import { siteConfig } from '@/config/site';
 import { GitHubButton } from '@/components/github-button';
@@ -219,6 +220,9 @@ export default function Home() {
                 {/* CTA Buttons */}
                 <div className="mb-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <DownloadButton />
+                  <AndroidDownloadButton
+                    className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-6 py-3 text-sm font-semibold text-emerald-700 shadow-sm transition hover:bg-emerald-100 dark:border-emerald-700/60 dark:bg-emerald-900/20 dark:text-emerald-200 dark:hover:bg-emerald-900/30 disabled:opacity-70"
+                  />
                   <GitHubButton
                     href="https://github.com/hunght/LearnifyTube"
                     type="star"
@@ -226,6 +230,15 @@ export default function Home() {
                   >
                     Star on GitHub
                   </GitHubButton>
+                </div>
+
+                <div className="mx-auto mb-8 max-w-2xl rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 text-left text-sm text-amber-900 dark:border-amber-700/50 dark:bg-amber-900/20 dark:text-amber-100">
+                  <p className="font-semibold">Android app is a companion client</p>
+                  <p className="mt-1">
+                    Desktop app acts as the server. Keep desktop running and
+                    turn on Sync in Desktop Settings before using the Android
+                    client.
+                  </p>
                 </div>
 
                 {/* Platform Downloads */}

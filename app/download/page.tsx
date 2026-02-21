@@ -37,6 +37,8 @@ const DownloadPage = () => {
         }
       } else if (platform === 'linux') {
         window.location.href = links.linux;
+      } else if (platform === 'android') {
+        window.location.href = links.android || links.androidReleases;
       } else {
         window.location.href = links.releases;
       }
@@ -86,6 +88,12 @@ const DownloadPage = () => {
       // Get the platform-specific download URL
       const url = getPlatformDownloadUrl(links);
       setDownloadUrl(url);
+
+      // Android should auto-start download as soon as the page is ready
+      if (os === 'android') {
+        initiateDownload();
+        return;
+      }
 
       // Skip countdown for macOS as we need user to select architecture
       if (os === 'mac') {
@@ -155,11 +163,18 @@ const DownloadPage = () => {
           : `learnifytube-${version}-arm64.dmg`;
       case 'linux':
         return `learnifytube_${version}_amd64.deb`;
+      case 'android': {
+        const androidFileName = links.android?.split('/').pop();
+        return androidFileName && androidFileName.endsWith('.apk')
+          ? androidFileName
+          : 'learnify-mobile.apk';
+      }
       default:
         return `learnifytube-${version}.Setup.exe`;
     }
   };
 
+  const unsupportedMobileDevice = isMobile && os !== 'android';
 
   return (
     <>
@@ -170,7 +185,7 @@ const DownloadPage = () => {
           '@type': 'SoftwareApplication',
           name: 'LearnifyTube',
           applicationCategory: 'MultimediaApplication',
-          operatingSystem: 'Windows, macOS, Linux',
+          operatingSystem: 'Windows, macOS, Linux, Android',
           offers: {
             '@type': 'Offer',
             price: '0',
@@ -218,7 +233,7 @@ const DownloadPage = () => {
               <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-purple-700"></div>
               <p className="text-gray-600">Loading download information...</p>
             </div>
-          ) : isMobile ? (
+          ) : unsupportedMobileDevice ? (
             <div className="mb-8 rounded-xl bg-purple-50 p-6 text-center">
               <div className="mb-4 flex items-center justify-center">
                 {getOsIcon()}
@@ -227,7 +242,7 @@ const DownloadPage = () => {
                 </span>
               </div>
               <p className="text-gray-600">
-                LearnifyTube is currently available for desktop platforms only (Windows, macOS, and Linux). Please visit this page from your desktop computer to download the app.
+                iOS download is not available yet. Please use Android for the mobile APK, or download the desktop app for Windows, macOS, or Linux.
               </p>
             </div>
           ) : (
@@ -289,7 +304,11 @@ const DownloadPage = () => {
                           onClick={initiateDownload}
                           className="mx-auto flex items-center justify-center rounded-lg bg-purple-600 px-8 py-3 font-bold text-white transition duration-300 hover:bg-purple-700"
                         >
-                          <FaDownload className="mr-2" />
+                          {os === 'android' ? (
+                            <FaAndroid className="mr-2" />
+                          ) : (
+                            <FaDownload className="mr-2" />
+                          )}
                           Download Now{' '}
                           {getDownloadFileName() &&
                             `(${getDownloadFileName()})`}
@@ -300,7 +319,7 @@ const DownloadPage = () => {
                 )}
               </div>
 
-              <div className="mb-8 grid gap-4 md:grid-cols-3">
+              <div className="mb-8 grid gap-4 md:grid-cols-4">
                 <div className="rounded-lg bg-gray-50 p-4 text-center">
                   <FaWindows className="mx-auto mb-2 text-2xl text-gray-700" />
                   <p className="font-medium">Windows</p>
@@ -338,6 +357,16 @@ const DownloadPage = () => {
                     className="mt-1 text-sm text-purple-600 underline hover:text-purple-800"
                   >
                     Download
+                  </button>
+                </div>
+                <div className="rounded-lg bg-gray-50 p-4 text-center">
+                  <FaAndroid className="mx-auto mb-2 text-2xl text-gray-700" />
+                  <p className="font-medium">Android</p>
+                  <button
+                    onClick={() => handlePlatformDownload('android')}
+                    className="mt-1 text-sm text-purple-600 underline hover:text-purple-800"
+                  >
+                    Download APK
                   </button>
                 </div>
               </div>

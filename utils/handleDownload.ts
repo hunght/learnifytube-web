@@ -1,32 +1,29 @@
+import type { AppLinks } from '@/config/app-links';
+
 // Allow passing custom app links or fallback to default
 export const handleDownload = () => {
   // Redirect to the download page where auto-detection happens
   window.location.href = '/download';
 };
 
-export const getPlatformDownloadUrl = (customAppLinks: {
-  windows: string;
-  macos: string;
-  linux: string;
-  releases: string;
-  macosIntel: string;
-  linuxRpm: string;
-}): string => {
+export const getPlatformDownloadUrl = (customAppLinks: AppLinks): string => {
   if (typeof window === 'undefined') {
     return customAppLinks.releases;
   }
 
-  const userAgent = window.navigator.userAgent;
+  const userAgent = window.navigator.userAgent.toLowerCase();
 
-  if (userAgent.indexOf('Windows') !== -1) {
+  if (userAgent.indexOf('android') !== -1) {
+    return customAppLinks.android || customAppLinks.androidReleases;
+  } else if (userAgent.indexOf('windows') !== -1) {
     return customAppLinks.windows;
-  } else if (userAgent.indexOf('Mac') !== -1) {
-    if (userAgent.indexOf('ARM') !== -1) {
+  } else if (userAgent.indexOf('mac') !== -1) {
+    if (userAgent.indexOf('arm') !== -1) {
       return customAppLinks.macos;
     } else {
       return customAppLinks.macosIntel || customAppLinks.macos;
     }
-  } else if (userAgent.indexOf('Linux') !== -1) {
+  } else if (userAgent.indexOf('linux') !== -1) {
     return customAppLinks.linux;
   }
 
