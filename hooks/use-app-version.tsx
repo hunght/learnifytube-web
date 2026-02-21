@@ -33,14 +33,12 @@ export function useAppVersion() {
       setVersion(latestVersion);
       setLinks(buildAppLinks(latestVersion, latestAndroidApkUrl));
 
-      if (
-        versionResult.status === 'rejected' ||
-        androidApkResult.status === 'rejected'
-      ) {
-        const reason =
-          versionResult.status === 'rejected'
-            ? versionResult.reason
-            : androidApkResult.reason;
+      if (versionResult.status === 'rejected') {
+        const reason = versionResult.reason;
+        console.error('Failed to load download metadata:', reason);
+        setError(reason instanceof Error ? reason : new Error('Unknown error'));
+      } else if (androidApkResult.status === 'rejected') {
+        const reason = androidApkResult.reason;
         console.error('Failed to load download metadata:', reason);
         setError(reason instanceof Error ? reason : new Error('Unknown error'));
       }
