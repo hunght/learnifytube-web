@@ -2,52 +2,63 @@
 
 import { useState, useEffect } from 'react';
 import {
-  getLatestVersionFromApi,
-  buildAppLinks,
-  getLatestAndroidApkUrlFromApi,
+  defaultDownloadMetadata,
+  getDownloadMetadataFromApi,
 } from '@/config/app-links';
 
-const fallbackVersion = '1.0.163';
 export function useAppVersion() {
-  const [version, setVersion] = useState(fallbackVersion);
-  const [links, setLinks] = useState(buildAppLinks(fallbackVersion));
+  const [desktopVersion, setDesktopVersion] = useState<string | null>(
+    defaultDownloadMetadata.desktopVersion,
+  );
+  const [androidVersion, setAndroidVersion] = useState<string | null>(
+    defaultDownloadMetadata.androidVersion,
+  );
+  const [links, setLinks] = useState(defaultDownloadMetadata.links);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    let mounted = true;
+
     async function fetchVersion() {
-      const [versionResult, androidApkResult] = await Promise.allSettled([
-        getLatestVersionFromApi(),
-        getLatestAndroidApkUrlFromApi(),
-      ]);
+      try {
+        const metadata = await getDownloadMetadataFromApi();
 
-      const latestVersion =
-        versionResult.status === 'fulfilled'
-          ? versionResult.value
-          : fallbackVersion;
-      const latestAndroidApkUrl =
-        androidApkResult.status === 'fulfilled'
-          ? androidApkResult.value
-          : undefined;
+        if (!mounted) {
+          return;
+        }
 
-      setVersion(latestVersion);
-      setLinks(buildAppLinks(latestVersion, latestAndroidApkUrl));
-
-      if (versionResult.status === 'rejected') {
-        const reason = versionResult.reason;
+        setDesktopVersion(metadata.desktopVersion);
+        setAndroidVersion(metadata.androidVersion);
+        setLinks(metadata.links);
+      } catch (reason) {
         console.error('Failed to load download metadata:', reason);
+
+        if (!mounted) {
+          return;
+        }
+
         setError(reason instanceof Error ? reason : new Error('Unknown error'));
-      } else if (androidApkResult.status === 'rejected') {
-        const reason = androidApkResult.reason;
-        console.error('Failed to load download metadata:', reason);
-        setError(reason instanceof Error ? reason : new Error('Unknown error'));
+      } finally {
+        if (mounted) {
+          setLoading(false);
+        }
       }
-
-      setLoading(false);
     }
 
     fetchVersion();
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
-  return { version, links, loading, error };
+  return {
+    version: desktopVersion,
+    desktopVersion,
+    androidVersion,
+    links,
+    loading,
+    error,
+  };
 }

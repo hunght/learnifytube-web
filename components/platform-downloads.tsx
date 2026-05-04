@@ -3,6 +3,7 @@
 import { FaApple, FaLinux, FaWindows } from 'react-icons/fa';
 
 import { useAppVersion } from '@/hooks/use-app-version';
+import { siteConfig } from '@/config/site';
 
 export function PlatformDownloads() {
   const { links } = useAppVersion();
@@ -75,7 +76,7 @@ export function PlatformDownloads() {
           View all releases on GitHub
         </a>
         <a
-          href="https://github.com/hunght/LearnifyTube"
+          href={siteConfig.links.github}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center text-sm text-primary hover:underline"

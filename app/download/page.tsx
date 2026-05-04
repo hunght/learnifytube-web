@@ -13,12 +13,13 @@ import {
 import Link from 'next/link';
 import { getPlatformDownloadUrl } from '@/utils/handleDownload';
 import { useAppVersion } from '@/hooks/use-app-version';
+import { getAssetFileName } from '@/config/app-links';
 import Image from 'next/image';
 import { JsonLd } from 'react-schemaorg';
 import { SoftwareApplication } from 'schema-dts';
 
 const DownloadPage = () => {
-  const { links, loading, version } = useAppVersion();
+  const { links, loading, desktopVersion, androidVersion } = useAppVersion();
   const [os, setOs] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [downloadStarted, setDownloadStarted] = useState(false);
@@ -152,26 +153,27 @@ const DownloadPage = () => {
   };
 
   const getDownloadFileName = (macArch?: string) => {
-    if (!version) return '';
+    let link = links.releases;
 
     switch (os) {
       case 'windows':
-        return `learnifytube-${version}.Setup.exe`;
+        link = links.windows;
+        break;
       case 'mac':
-        return macArch === 'intel'
-          ? `learnifytube-${version}.dmg`
-          : `learnifytube-${version}-arm64.dmg`;
+        link =
+          macArch === 'intel' ? links.macosIntel || links.macos : links.macos;
+        break;
       case 'linux':
-        return `learnifytube_${version}_amd64.deb`;
-      case 'android': {
-        const androidFileName = links.android?.split('/').pop();
-        return androidFileName && androidFileName.endsWith('.apk')
-          ? androidFileName
-          : 'learnify-mobile.apk';
-      }
+        link = links.linux;
+        break;
+      case 'android':
+        link = links.android || links.androidReleases;
+        break;
       default:
-        return `learnifytube-${version}.Setup.exe`;
+        break;
     }
+
+    return getAssetFileName(link);
   };
 
   const unsupportedMobileDevice = isMobile && os !== 'android';
@@ -194,7 +196,7 @@ const DownloadPage = () => {
           downloadUrl: 'https://learnifytube.com/download',
           description:
             'The smartest YouTube downloader for offline learning. Download videos, playlists, and channels.',
-          softwareVersion: version || 'latest',
+          softwareVersion: desktopVersion || androidVersion || 'latest',
           image: 'https://learnifytube.com/logo-300.png',
           author: {
             '@type': 'Person',
@@ -223,9 +225,12 @@ const DownloadPage = () => {
             <p className="text-lg text-gray-600">
               Your smart YouTube downloader for offline learning
             </p>
-            {!loading && version && (
-              <p className="mt-2 text-sm text-purple-600">Version {version}</p>
-            )}
+            {!loading && (desktopVersion || androidVersion) ? (
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-3 text-sm text-purple-600">
+                {desktopVersion ? <span>Desktop {desktopVersion}</span> : null}
+                {androidVersion ? <span>Android {androidVersion}</span> : null}
+              </div>
+            ) : null}
           </div>
 
           {loading ? (
@@ -242,7 +247,9 @@ const DownloadPage = () => {
                 </span>
               </div>
               <p className="text-gray-600">
-                iOS download is not available yet. Please use Android for the mobile APK, or download the desktop app for Windows, macOS, or Linux.
+                iOS download is not available yet. Please use Android for the
+                mobile APK, or download the desktop app for Windows, macOS, or
+                Linux.
               </p>
             </div>
           ) : (

@@ -2,10 +2,7 @@
 
 import { useState } from 'react';
 import { FaAndroid } from 'react-icons/fa';
-import { getLatestAndroidApkUrlFromApi } from '@/config/app-links';
-
-const ANDROID_RELEASES_FALLBACK =
-  'https://github.com/learnifytube/learnify-mobile/releases';
+import { getDownloadMetadataFromApi, releasesUrl } from '@/config/app-links';
 
 export function AndroidDownloadButton({
   className,
@@ -17,10 +14,12 @@ export function AndroidDownloadButton({
     if (loading) return;
     setLoading(true);
     try {
-      const apkUrl = await getLatestAndroidApkUrlFromApi();
+      const metadata = await getDownloadMetadataFromApi();
+      const apkUrl = metadata.links.android || metadata.links.androidReleases;
+
       window.open(apkUrl, '_blank', 'noopener,noreferrer');
     } catch {
-      window.open(ANDROID_RELEASES_FALLBACK, '_blank', 'noopener,noreferrer');
+      window.open(releasesUrl, '_blank', 'noopener,noreferrer');
     } finally {
       setLoading(false);
     }
